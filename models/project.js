@@ -8,7 +8,7 @@ var projectSchema = new mongoose.Schema({
     lithuanianDesc: String,
     projectDate: { type: Date, default: Date.now },
     imgUrl: [String], //feed to img inside of grid element
-    location: Number 
+    location: Number
 });
 
 //location: determine position on page via number passed to css variable which gets passed to 
