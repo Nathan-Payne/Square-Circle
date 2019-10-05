@@ -24,4 +24,25 @@ app.get("/graphic-design", (req, res) => {
 });
 
 
+app.get("/photography", (req, res) => {
+    res.render('photography')
+});
+
+
+app.get("/art", (req, res) => {
+    res.render('art')
+});
+
+
+app.get("/about", (req, res) => {
+    res.render('about')
+});
+
+
+app.get("/concept", (req, res) => {
+    res.render('concept')
+});
+
+
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`))
