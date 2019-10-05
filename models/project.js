@@ -1,8 +1,8 @@
-const mongoose = require('mogoose');
+const mongoose = require('mongoose');
 
 var projectSchema = new mongoose.Schema({
     title: String,
-    projectType: {type: String, enum: ["Graphic Design", "Photography", "Art"],
+    projectType: {type: String, enum: ["Graphic Design", "Photography", "Art"]},
     shortDesc: String,
     englishDesc: String,
     lithuanianDesc: String,

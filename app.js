@@ -8,8 +8,8 @@ const methodOverride = require("method-override");
 const Admin = require('./models/admin');
 const PORT = process.env.PORT || 5000
 
-// const indexRoutes = require('./routes/index');
-// const projectRoutes = require('./routes/project');
+const indexRoutes = require('./routes/index');
+const projectRoutes = require('./routes/project');
 
 app.use(bodyParser.urlencoded({extended: true})); 
 app.set("view engine", "ejs");
@@ -44,35 +44,23 @@ mongoose.connection.on('error', err => {
 });
 
 
-app.get("/", (req, res) => {
-    res.render('home')
-});
-
-
+//Project SHOW page
 app.get("/graphic-design", (req, res) => {
     res.render('graphicDesign')
 });
 
-
+//Project SHOW page
 app.get("/photography", (req, res) => {
     res.render('photography')
 });
 
-
+//Project SHOW page
 app.get("/art", (req, res) => {
     res.render('art')
 });
 
 
-app.get("/about", (req, res) => {
-    res.render('about')
-});
-
-
-app.get("/concept", (req, res) => {
-    res.render('concept')
-});
-
-
+app.use(indexRoutes);
+// app.use(projectRoutes);
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`))
