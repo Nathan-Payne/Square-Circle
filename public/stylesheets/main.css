@@ -257,3 +257,13 @@ section {
     transform: scale(-1, -1);
 }
 
+
+
+/* Forms formatting - not seen by site visitors */
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    padding: 0.7rem;
+}

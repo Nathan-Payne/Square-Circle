@@ -5,6 +5,7 @@ const Admin = require('../models/admin');
 const Project = require('../models/project');
 
 
+
 //HOMEPAGE
 router.get("/", (req, res) => {
     res.render('home')
@@ -50,7 +51,7 @@ router.get("/login", (req, res)=>{
 });
 
 router.post("/login", passport.authenticate("local", {
-    successRedirect: '/yay',
+    successRedirect: '/',
     failureRedirect: '/login'
 }), (req, res)=>{}
 );

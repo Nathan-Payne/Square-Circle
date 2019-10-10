@@ -7,7 +7,7 @@ var projectSchema = new mongoose.Schema({
     englishDesc: String,
     lithuanianDesc: String,
     projectDate: { type: Date, default: Date.now },
-    imgUrl: [String], //feed cloudinary url to img inside of grid element
+    imgUrl: String, //feed cloudinary url to img inside of grid element
     location: Number
 });
 

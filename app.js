@@ -62,6 +62,6 @@ app.get("/art", (req, res) => {
 
 
 app.use(indexRoutes);
-// app.use(projectRoutes);
+app.use(projectRoutes);
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`))
