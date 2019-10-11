@@ -45,22 +45,6 @@ mongoose.connection.on('error', err => {
 });
 
 
-//Project SHOW page
-app.get("/graphic-design", (req, res) => {
-    res.render('graphicDesign')
-});
-
-//Project SHOW page
-app.get("/photography", (req, res) => {
-    res.render('photography')
-});
-
-//Project SHOW page
-app.get("/art", (req, res) => {
-    res.render('art')
-});
-
-
 app.use(indexRoutes);
 app.use(projectRoutes);
 

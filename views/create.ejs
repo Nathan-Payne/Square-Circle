@@ -4,32 +4,32 @@
 <h1>Create new project</h1>
 <form action="/create" method="POST">
     <label class="form">Project Title
-        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="project[title]" placeholder="Title">
     </label>
     <label class="form">Project Type
-        <select name="projectType" id="">
+        <select name="project[projectType]" id="">
             <option value="Graphic Design">Graphic Design</option>
             <option value="Photography">Photography</option>
             <option value="Art">Art</option>
         </select>
     </label>
     <label class="form">Thumbnail Description
-        <textarea name="shortDesc" cols="30" rows="3" placeholder="Thumbnail Description"></textarea>
+        <textarea name="project[shortDesc]" cols="30" rows="3" placeholder="Thumbnail Description"></textarea>
     </label>
     <label class="form">English Description
-        <textarea name="englishDesc" cols="50" rows="10" placeholder="English Description (Long)"></textarea>
+        <textarea name="project[englishDesc]" cols="50" rows="10" placeholder="English Description (Long)"></textarea>
     </label>
     <label class="form">Lithuanian Description
-        <textarea name="lithuanianDesc" cols="50" rows="10" placeholder="Lithuanian Description (Long)"></textarea>
+        <textarea name="project[lithuanianDesc]" cols="50" rows="10" placeholder="Lithuanian Description (Long)"></textarea>
     </label>
     <label class="form">Project Date 
-        <input type="date" name="projectDate">
+        <input type="date" name="project[projectDate]">
     </label>
     <label class="form">Image URL
-        <input type="text" name="imageURL">
+        <input type="text" name="project[imageURL]">
     </label>
     <label class="form">Location (a number): 
-        <input type="number" name="location">
+        <input type="number" name="project[location]">
     </label>
 
     <label class="form">Create the project

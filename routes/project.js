@@ -17,6 +17,50 @@ router.get("/create", (req, res)=>{
 });
 
 
+router.post("/create", (req, res)=>{
+    Project.create(req.body.project, (err, newProject)=>{
+        if(err){
+            console.log(err);
+            return res.redirect('back');
+        }
+        res.send(newProject);
+    });
+});
+
+
+//=======Show list of projects in each category========
+//.find({options}) - 1st option allows conditions to be set for data retrieved from database
+//GET routes are passed only the projects of the relevant type
+//GRAPHIC DESIGN SHOW
+router.get("/graphic-design", async (req, res) => {
+    try{
+        let projects = await Project.find({projectType: "Graphic Design"});
+        res.render('graphicDesign', {projects: projects});
+    } catch (err) {
+        console.error(err);
+    };
+});
+
+//PHOTOGRAPHY SHOW
+router.get("/photography", async (req, res) => {
+    try{
+        let projects = await Project.find({projectType: "Photography"});
+        res.render('photography', {projects: projects});
+    } catch (err) {
+        console.error(err);
+    };
+});
+
+//ART SHOW
+router.get("/art", async (req, res) => {
+    try{
+        let projects = await Project.find({projectType: "Art"});
+        res.render('art', {projects: projects});
+    } catch (err) {
+        console.error(err);
+    };
+});
+
 
 
 

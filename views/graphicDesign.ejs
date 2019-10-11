@@ -1,6 +1,11 @@
 <% include ./partials/header %>
 
-
+<div>
+    <% projects.forEach(function(project){ %>
+        <h3><%= project.title %></h3>
+        <h6><%= project.shortDesc %></h6>
+    <% }); %>
+</div>
 
 
 
