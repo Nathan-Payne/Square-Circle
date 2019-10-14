@@ -8,22 +8,49 @@
 const express = require("express");
 const router = express.Router();
 const Project = require("../models/project");
-const asyncMiddleware = require("../middleware/index");
 
+//=========MULTIFILE UPLOAD VIA MULTER=========
+//config - memory storage may be needed if host doesn't allow disk access
+const multer = require("multer");
+var storage = multer.diskStorage({
+    filename: function(req, file, callback) {
+        callback(null, Date.now() + "-" + file.originalname);
+    }
+});
+var upload = multer({storage: storage});
+//=========CLOUDINARY CONFIG==========
+const cloudinary = require("cloudinary");
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
+//==========ROUTES==================================
 //=======Create new project========
 router.get("/create", (req, res)=>{
     res.render("create"); 
 });
 
 
-router.post("/create", (req, res)=>{
-    Project.create(req.body.project, (err, newProject)=>{
+router.post("/create", upload.single('image'), (req, res)=>{
+    cloudinary.v2.uploader.upload(req.file.path, {
+        folder: 'square_circle/', 
+        public_id: req.body.project.title
+    }, (err, result)=>{
         if(err){
-            console.log(err);
+            console.error(err);
             return res.redirect('back');
         }
-        res.send(newProject);
+        req.body.project.imgUrl = result.secure_url;
+        req.body.project.imgId = result.public_id;
+        Project.create(req.body.project, (err, newProject)=>{
+            if(err){
+                console.log(err);
+                return res.redirect('back');
+            }
+            res.send(newProject);
+        });
     });
 });
 

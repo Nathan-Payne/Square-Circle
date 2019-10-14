@@ -2,7 +2,7 @@
 
 
 <h1>Create new project</h1>
-<form action="/create" method="POST">
+<form action="/create" method="POST" enctype="multipart/form-data">
     <label class="form">Project Title
         <input type="text" name="project[title]" placeholder="Title">
     </label>
@@ -25,8 +25,8 @@
     <label class="form">Project Date 
         <input type="date" name="project[projectDate]">
     </label>
-    <label class="form">Image URL
-        <input type="text" name="project[imageURL]">
+    <label class="form">Image Upload
+        <input type="file" name="image" accept="image/*">
     </label>
     <label class="form">Location (a number): 
         <input type="number" name="project[location]">

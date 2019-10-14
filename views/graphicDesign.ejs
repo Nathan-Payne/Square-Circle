@@ -4,10 +4,14 @@
     <% projects.forEach(function(project){ %>
         <h3><%= project.title %></h3>
         <h6><%= project.shortDesc %></h6>
+        <img src="<%= project.imgUrl %>" alt="<%= project.title %> image">
     <% }); %>
 </div>
 
+<!-- use cloudinary.image() to return HTML image tags, see docs -->
 
+<!-- NEXT - INCLUDE IMAGE UPLOAD LOGIC VIA MULTER-CLOUDINARY
+INTO CREATE POST ROUTE THEN START FORMATTING THE EJS TEMPLATES -->
 
 
 
