@@ -1,18 +1,22 @@
 <% include ./partials/header %>
 
-<div>
+<section class="container">
     <% projects.forEach(function(project){ %>
-        <h3><%= project.title %></h3>
-        <h6><%= project.shortDesc %></h6>
-        <img src="<%= project.imgUrl %>" alt="<%= project.title %> image">
+        <div class="thumbnail">
+            <img src="<%= cloudinary.url(`square_circle/${project.title}.jpg`, {width: `auto`, crop: `scale`, client_hints: `true`, sizes: `80%`}) %>" alt="<%= project.title %> image">
+            <h3><%= project.title %></h3>
+            <h6><%= project.shortDesc %></h6>
+        </div>
     <% }); %>
-</div>
+</section>
 
-<!-- use cloudinary.image() to return HTML image tags, see docs -->
 
-<!-- NEXT - INCLUDE IMAGE UPLOAD LOGIC VIA MULTER-CLOUDINARY
-INTO CREATE POST ROUTE THEN START FORMATTING THE EJS TEMPLATES -->
+<!-- Dynamically fill CSS grid with projects
+can use location property of project model to set
+grid-column-start and span to select size via js
 
+-would have to generate id tags for each project
+and add the start/span data to the css -->
 
 
 

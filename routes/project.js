@@ -62,7 +62,7 @@ router.post("/create", upload.single('image'), (req, res)=>{
 router.get("/graphic-design", async (req, res) => {
     try{
         let projects = await Project.find({projectType: "Graphic Design"});
-        res.render('graphicDesign', {projects: projects});
+        res.render('graphicDesign', {projects: projects, cloudinary: cloudinary});
     } catch (err) {
         console.error(err);
     };
