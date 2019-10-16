@@ -1,16 +1,27 @@
 <% include ./partials/header %>
 
 <section class="container">
-    <% projects.forEach(function(project){ %>
+    <% projects.forEach(function(project, index){ %>
         <div class="thumbnail">
-            <img src="<%= cloudinary.url(`square_circle/${project.title}.jpg`, {width: `auto`, crop: `scale`, client_hints: `true`, sizes: `80%`}) %>" alt="<%= project.title %> image">
-            <h3><%= project.title %></h3>
+            <img src="<%= cloudinary.url(`square_circle/${project.title}.jpg`, {quality: 50, crop: `scale`}) %>" alt="<%= project.title %> image">
+            <h4><%= project.title %></h4>
             <h6><%= project.shortDesc %></h6>
+            <p><%= index + 1 %></p>
         </div>
     <% }); %>
 </section>
 
+<script>
+    let thumbnail = document.getElementsByClassName("thumbnail");
+    let projects = <%- JSON.stringify(projects, ['title', 'shortDesc', 'location']) %>;
+        
+    for (i=0; i<projects.length; i++){
+        thumbnail[i].classList.add("fadeAnimation");
+        thumbnail[i].setAttribute("id", `image${i + 1}`)
+        console.log(projects.length);
+    };
 
+</script>
 <!-- Dynamically fill CSS grid with projects
 can use location property of project model to set
 grid-column-start and span to select size via js

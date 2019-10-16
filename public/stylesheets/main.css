@@ -268,21 +268,39 @@ section {
     padding: 0.7rem;
 }
 
+/* SHOW page grid */
+
 .container {
     display: grid;
     grid-template-columns: [sidebar] 90px [content] 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(4, 30vh);
+    grid-template-rows: repeat(8, 20vh);
     margin: 0;
     padding: 0;
 }
 
 .thumbnail {
-    grid-column: content / span 2;
+    /* grid-column: content / span 2; */
+    grid-row: 1 / span 2;
     width: 100%;
     text-align: center;
-
 }
 
 .thumbnail img {
     width: 70%;
+}
+
+
+/* ANIMATIONS */
+.fadeAnimation {
+    opacity: 1;
+    animation: fadeInLoad 750ms ease-in-out 80ms;
+}
+
+@keyframes fadeInLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
