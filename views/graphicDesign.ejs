@@ -2,32 +2,33 @@
 
 <section class="container">
     <% projects.forEach(function(project, index){ %>
-        <div class="thumbnail">
+        <div class="thumbnail fadeAnimation">
             <img src="<%= cloudinary.url(`square_circle/${project.title}.jpg`, {quality: 50, crop: `scale`}) %>" alt="<%= project.title %> image">
-            <h4><%= project.title %></h4>
+            <h4><span><%= project.title %></span></h4> 
             <h6><%= project.shortDesc %></h6>
-            <p><%= index + 1 %></p>
+            <span style="font-size: 0.7rem;">position xy: <%= project.xPosition %>, <%= project.yPosition %></span>
         </div>
     <% }); %>
 </section>
 
 <script>
     let thumbnail = document.getElementsByClassName("thumbnail");
-    let projects = <%- JSON.stringify(projects, ['title', 'shortDesc', 'location']) %>;
+    let projects = <%- JSON.stringify(projects, ['title', 'shortDesc', 'location', 'xPosition', 'yPosition']) %>;
         
     for (i=0; i<projects.length; i++){
-        thumbnail[i].classList.add("fadeAnimation");
         thumbnail[i].setAttribute("id", `image${i + 1}`)
-        console.log(projects.length);
+        console.log(projects[i]);
+
+        thumbnail[i].style.gridColumnStart = projects[i].xPosition;
+        thumbnail[i].style.gridRowStart = projects[i].yPosition;
     };
 
-</script>
-<!-- Dynamically fill CSS grid with projects
-can use location property of project model to set
-grid-column-start and span to select size via js
 
--would have to generate id tags for each project
-and add the start/span data to the css -->
+</script>
+
+<!-- auto selection of xPosition and yPosition values
+could be done based on previous projects values if 
+field left empty -->
 
 
 

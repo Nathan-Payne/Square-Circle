@@ -9,7 +9,8 @@ var projectSchema = new mongoose.Schema({
     projectDate: { type: Date, default: Date.now },
     imgUrl: String, //feed cloudinary url to img inside of grid element
     imgId: String,
-    location: Number
+    xPosition: Number,
+    yPosition: Number
 });
 
 //location: determine position on page via number passed to css variable which gets passed to 
