@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+
+
+<div class="projectpage">
+    <div>
+        <!-- will need to script the addidtion of multiple
+        images from cloudinary array - use forEach -->
+        <img src="<%= project.imgUrl %>" alt="<%= project.title %> image">
+        <h1><%= project.title %></h1>
+        <p><%= project.englishDesc %></p>
+        <hr id="greybar">
+        <p><%= project.lithuanianDesc %></p>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>

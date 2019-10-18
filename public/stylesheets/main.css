@@ -280,7 +280,7 @@ section {
 .container {
     display: grid;
     grid-template-columns: [sidebar] 90px [content] repeat(12, 1fr);
-    grid-template-rows: repeat(12, 15vh);
+    grid-template-rows: repeat(24, 15vh);
     margin: 0;
     padding: 0;
 }
@@ -288,23 +288,28 @@ section {
 .thumbnail {
     /* grid-column: content / span 2; */
     /* grid-row: 1 / span 2; */
-    grid-column-end: span 2;
+    grid-column-end: span 3;
     grid-row-end: span 3;
     width: 100%;
     text-align: start;
     box-sizing: border-box;
 }
+/* LINK PROPERTIES */
+.thumbnail a {
+    color: inherit;
+    text-decoration: inherit;
+}
 
 .thumbnail img {
     height: 70%;
-    max-width: 200%;
+    max-width: 150%;
 }
 
 .thumbnail h4, .thumbnail h6, .thumbnail p {
     margin: 0;
     padding: 0;
 }
-
+/* Thumbnail title and underline */
 .thumbnail h4 {
     text-transform: uppercase;
     font-weight: 900;
@@ -332,7 +337,40 @@ section {
     font-size: 0.9rem;
 }
 
+/* SHOW PROJECT PAGE */
+.projectpage {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
 
+.projectpage div {
+    width: 60vw;
+}
+
+.projectpage div img {
+    width: 60vw;
+}
+
+.projectpage h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+}
+
+.projectpage p {
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.projectpage #greybar {
+    border: 0.3rem solid rgba(211, 211, 211, 0.55);
+    color: rgba(211, 211, 211, 0.55);
+    margin-top: 1.7rem;
+    margin-bottom: 1.7rem;
+}
 
 
 

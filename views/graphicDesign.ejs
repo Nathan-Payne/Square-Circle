@@ -3,10 +3,12 @@
 <section class="container">
     <% projects.forEach(function(project, index){ %>
         <div class="thumbnail fadeAnimation">
-            <img src="<%= cloudinary.url(`square_circle/${project.title}.jpg`, {quality: 50, crop: `scale`}) %>" alt="<%= project.title %> image">
-            <h4><span><%= project.title %></span></h4> 
-            <h6><%= project.shortDesc %></h6>
-            <span style="font-size: 0.7rem;">position xy: <%= project.xPosition %>, <%= project.yPosition %></span>
+            <a href="/<%= project._id %>">
+                <img src="<%= cloudinary.url(`square_circle/${project.title}.jpg`, {quality: 50, crop: `scale`}) %>" alt="<%= project.title %> image">
+                <h4><span><%= project.title %></span></h4> 
+                <h6><%= project.shortDesc %></h6>
+                <span style="font-size: 0.7rem;">position xy: <%= project.xPosition %>, <%= project.yPosition %></span>
+            </a>
         </div>
     <% }); %>
 </section>
