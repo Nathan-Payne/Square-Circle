@@ -95,9 +95,16 @@ router.get("/:id", (req, res)=>{
     });
 });
 
+//============EDIT PROJECT ROUTE===========
+router.get("/:id/edit", async (req, res)=>{
+    try {
+        let foundProject = await Project.findById(req.params.id);
+        res.render('edit', {project: foundProject});
+    } catch (err){
+        console.error(err);
+    };
+});
 
-
-//============EDIT ROUTE===========
 
 
 
