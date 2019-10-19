@@ -319,7 +319,21 @@ section {
 .thumbnail h4 span {
     position: relative;
     padding-bottom: 1px;
+    background-image: linear-gradient(
+        to bottom, 
+        black 33%, 
+        transparent 33%, 
+        transparent 66%, 
+        black 66%, 
+        black
+    );
+    background-position: 0 1.03em;
+    background-repeat: repeat-x;
+    background-size: 6px 8px;
 }
+/*  REPLACED BY background-image METHOD ABOVE - covers multi-line titles
+    cant transition background images yet but can fade in/out different
+    color images on ::hover via opacity
 .thumbnail h4 span::after {
     content: "";
     position: absolute;
@@ -329,7 +343,7 @@ section {
     bottom: 1px;
     background-color: black;
     white-space: normal;
-}
+} */
 
 .thumbnail h6 {
     color: black;
