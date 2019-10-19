@@ -81,6 +81,8 @@ router.get("/art", async (req, res) => {
         res.render('art', {projects: projects, cloudinary: cloudinary});
     } catch (err) {
         console.error(err);
+        console.log(projects);
+        res.redirect("/");
     };
 });
 

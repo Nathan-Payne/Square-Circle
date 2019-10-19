@@ -15,14 +15,14 @@
 
 <script>
     let thumbnail = document.getElementsByClassName("thumbnail");
-    let projects = <%- JSON.stringify(projects, ['title', 'shortDesc', 'location', 'xPosition', 'yPosition']) %>;
+    let thumbProjects = <%- JSON.stringify(projects, ['_id', 'title', 'shortDesc', 'xPosition', 'yPosition']) %>;
         
-    for (i=0; i<projects.length; i++){
+    for (i=0; i<thumbProjects.length; i++){
         thumbnail[i].setAttribute("id", `image${i + 1}`)
-        console.log(projects[i]);
+        console.log(thumbProjects[i]);
 
-        thumbnail[i].style.gridColumnStart = projects[i].xPosition;
-        thumbnail[i].style.gridRowStart = projects[i].yPosition;
+        thumbnail[i].style.gridColumnStart = thumbProjects[i].xPosition;
+        thumbnail[i].style.gridRowStart = thumbProjects[i].yPosition;
     };
 
 
