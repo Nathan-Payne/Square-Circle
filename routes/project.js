@@ -107,6 +107,41 @@ router.get("/project/:id/edit", async (req, res)=>{
     };
 });
 
+router.put("/project/:id", upload.single('image'), (req, res)=>{
+    Project.findById(req.params.id, async function(err, project){
+        if(err){
+            res.redirect('back');
+        } else {
+            if(req.file) {
+                try {
+                    await cloudinary.v2.uploader.destroy(project.imgId);
+                    let result = await cloudinary.v2.uploader.upload(req.file.path, 
+                        {
+                            folder: "square_circle/",
+                            public_id: req.body.project.title
+                        });
+                    project.imgUrl = result.secure_url;
+                    project.imgId = result.public_id;
+                } catch (err) {
+                    return res.redirect('back');
+                };
+            };
+            project.title           = req.body.project.title;
+            project.projectType     = req.body.project.projectType;
+            project.shortDesc       = req.body.project.shortDesc;
+            project.englishDesc     = req.body.project.englishDesc;
+            project.lithuanianDesc  = req.body.project.lithuanianDesc;
+            project.projectDate     = req.body.project.projectDate;
+            project.xPosition       = req.body.project.xPosition;
+            project.yPosition       = req.body.project.yPosition;
+
+            project.save();
+            res.redirect("/project/" + req.params.id);
+        };
+    });
+});
+
+//=========DELETE PROJECT ROUTE============
 
 
 

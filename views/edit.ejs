@@ -2,12 +2,12 @@
 
 
 <h1>Editing <%= project.title %></h1>
-<form action="/<%= project._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+<form action="/project/<%= project._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
     <label class="form">Project Title
-        <input type="text" name="project[title]" value="<%=project.title%>" required>
+        <input type="text" name="project[title]" value="<%=project.title%>">
     </label>
     <label class="form">Project Type
-        <select name="project[projectType]" id="" required>
+        <select name="project[projectType]" id="">
             <option value="Graphic Design">Graphic Design</option>
             <option value="Photography">Photography</option>
             <option value="Art">Art</option>
@@ -26,13 +26,13 @@
         <input type="date" name="project[projectDate]" value="<%= project.projectDate %>">
     </label>
     <label class="form">Image Upload
-        <input type="file" name="image" accept="image/*" required>
+        <input type="file" name="image" accept="image/*">
     </label>
     <label class="form">Horizontal position (a number): 
-        <input type="number" name="project[xPosition]" value="<%= project.xPosition %>" required>
+        <input type="number" name="project[xPosition]" value="<%= project.xPosition %>">
     </label>
     <label class="form">Vertical position (a number): 
-        <input type="number" name="project[yPosition]" value="<%= project.yPosition %>" required>
+        <input type="number" name="project[yPosition]" value="<%= project.yPosition %>">
     </label>
 
     <label class="form">Make changes
