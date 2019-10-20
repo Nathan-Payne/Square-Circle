@@ -3,7 +3,7 @@
 <section class="container">
     <% projects.forEach(function(project, index){ %>
         <div class="thumbnail fadeAnimation">
-            <a href="/<%= project._id %>">
+            <a href="/project/<%= project._id %>">
                 <img src="<%= cloudinary.url(`square_circle/${project.title}.jpg`, {quality: 50, crop: `scale`}) %>" alt="<%= project.title %> image">
                 <h4><span><%= project.title %></span></h4> 
                 <h6><%= project.shortDesc %></h6>

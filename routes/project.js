@@ -87,7 +87,7 @@ router.get("/art", async (req, res) => {
 });
 
 //=======PROJECT SHOW ROUTE (individual)=============
-router.get("/:id", (req, res)=>{
+router.get("/project/:id", (req, res)=>{
     Project.findById(req.params.id, (err, foundProject)=>{
         if(err || !foundProject){
             console.log(err || "could not find that project");
@@ -98,7 +98,7 @@ router.get("/:id", (req, res)=>{
 });
 
 //============EDIT PROJECT ROUTE===========
-router.get("/:id/edit", async (req, res)=>{
+router.get("/project/:id/edit", async (req, res)=>{
     try {
         let foundProject = await Project.findById(req.params.id);
         res.render('edit', {project: foundProject});
