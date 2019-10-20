@@ -40,6 +40,16 @@
     </label>
 </form>
 
-
+<section class="delete">
+    <h1>Delete Project</h1>
+    <form action="/project/<%= project._id %>?_method=DELETE" method="POST">
+        <label class="form">
+            Permanently delete the current project 
+            <br>
+            THERE IS NO UNDO - BE SURE YOU SELECTED THE CORRECT PROJECT
+            <input type="submit" value="Delete Project">
+        </label>
+    </form>
+</section>
 
 <% include ./partials/footer %>

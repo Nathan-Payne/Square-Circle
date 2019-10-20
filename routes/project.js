@@ -48,7 +48,7 @@ router.post("/create", upload.single('image'), (req, res)=>{
                 console.log(err);
                 return res.redirect('back');
             }
-            res.send(newProject);
+            res.redirect(`/project/${newProject._id}`);
         });
     });
 });
@@ -142,7 +142,20 @@ router.put("/project/:id", upload.single('image'), (req, res)=>{
 });
 
 //=========DELETE PROJECT ROUTE============
-
-
+router.delete("/project/:id", (req, res)=>{
+    Project.findById(req.params.id, async (err, project)=>{
+        if (err) {
+            console.error(err);
+            res.redirect('back');
+        }
+        try {
+            await cloudinary.v2.uploader.destroy(project.imgId);
+            project.remove();
+            res.redirect("/");
+        } catch (err) {
+            return res.redirect('back');
+        };
+    });
+});
 
 module.exports = router;

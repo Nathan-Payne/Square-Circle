@@ -378,6 +378,7 @@ section {
     font-size: 1.2rem;
     line-height: 1.45rem;
     margin: 0;
+    overflow-wrap: break-word;
 }
 
 .projectpage #greybar {
