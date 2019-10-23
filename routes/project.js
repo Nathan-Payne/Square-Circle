@@ -32,25 +32,36 @@ router.get("/create", (req, res)=>{
     res.render("create"); 
 });
 
-router.post("/create", upload.single('image'), (req, res)=>{
-    cloudinary.v2.uploader.upload(req.file.path, {
-        folder: 'square_circle/', 
-        public_id: req.body.project.title
-    }, (err, result)=>{
-        if(err){
-            console.error(err);
-            return res.redirect('back');
-        }
-        req.body.project.imgUrl = result.secure_url;
-        req.body.project.imgId = result.public_id;
-        Project.create(req.body.project, (err, newProject)=>{
+router.post("/create", upload.array('image', 6), async (req, res)=>{
+    //use a for loop which ends when size of upload array is reached
+    //cloudinary doesnt support multiple file upload so have to iterate through
+    //multer array one by one.. will also need to update project model 
+    //(to include arrays for images and id's) and thumnail templates 
+    //(to use first image) and edit route/view and project view to show all images
+    var filePaths = req.files.map(file => file.path) //map creates new array from funct acting on elements of existing array
+    req.body.project.imgUrl, req.body.project.imgId = [], [];
+    for (let i=0; i<filePaths.length; i++) {
+        await cloudinary.v2.uploader.upload(filePaths[i], {
+            folder: 'square_circle/', 
+            public_id: `${req.body.project.title}_image${i}`
+        }, (err, result)=>{
             if(err){
-                console.log(err);
+                console.error(`Upload err: ${err}`);
                 return res.redirect('back');
+            }            
+            req.body.project.imgUrl.push(result.secure_url);
+            req.body.project.imgId.push(result.public_id);
+            if (req.body.project.imgId.length == filePaths.length){
+                Project.create(req.body.project, (err, newProject)=>{
+                    if(err){
+                        console.log(`Project create error: ${err}`);
+                        return res.redirect('back');
+                    }
+                    return res.redirect(`/project/${newProject._id}`);
+                });
             }
-            res.redirect(`/project/${newProject._id}`);
         });
-    });
+    }
 });
 
 //=======Show list of projects in each category========
@@ -107,7 +118,7 @@ router.get("/project/:id/edit", async (req, res)=>{
     };
 });
 
-router.put("/project/:id", upload.single('image'), (req, res)=>{
+router.put("/project/:id", upload.array('image', 6), (req, res)=>{
     Project.findById(req.params.id, async function(err, project){
         if(err){
             res.redirect('back');
@@ -153,6 +164,7 @@ router.delete("/project/:id", (req, res)=>{
             project.remove();
             res.redirect("/");
         } catch (err) {
+            console.error(err);
             return res.redirect('back');
         };
     });

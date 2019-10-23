@@ -5,7 +5,9 @@
     <div>
         <!-- will need to script the addidtion of multiple
         images from cloudinary array - use forEach -->
-        <img src="<%= project.imgUrl %>" alt="<%= project.title %> image">
+        <% project.imgUrl.forEach((img)=>{ %>
+            <img src="<%= img %>" alt="<%= project.title %> image">
+        <% }) %>
         <h1><%= project.title %></h1>
         <p><%= project.englishDesc %></p>
         <div id="greybar"></div>
