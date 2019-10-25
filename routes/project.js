@@ -39,7 +39,8 @@ router.post("/create", upload.array('image', 6), async (req, res)=>{
     //(to include arrays for images and id's) and thumnail templates 
     //(to use first image) and edit route/view and project view to show all images
     var filePaths = req.files.map(file => file.path) //map creates new array from funct acting on elements of existing array
-    req.body.project.imgUrl, req.body.project.imgId = [], [];
+    req.body.project.imgUrl = [];
+    req.body.project.imgId = [];
     for (let i=0; i<filePaths.length; i++) {
         await cloudinary.v2.uploader.upload(filePaths[i], {
             folder: 'square_circle/', 
@@ -121,19 +122,40 @@ router.get("/project/:id/edit", async (req, res)=>{
 router.put("/project/:id", upload.array('image', 6), (req, res)=>{
     Project.findById(req.params.id, async function(err, project){
         if(err){
+            console.log(err);
             res.redirect('back');
         } else {
-            if(req.file) {
+            if(req.files) {
+                var filePaths = req.files.map(file => file.path);
+                //DESTROY IMG IDS OF PROJECT IN CLOUDINARY and MONGODB
                 try {
-                    await cloudinary.v2.uploader.destroy(project.imgId);
-                    let result = await cloudinary.v2.uploader.upload(req.file.path, 
-                        {
-                            folder: "square_circle/",
-                            public_id: req.body.project.title
-                        });
-                    project.imgUrl = result.secure_url;
-                    project.imgId = result.public_id;
+                    var numberOfImages = project.imgId.length;
+                    for (let j=0; j < numberOfImages; j++) {
+                        await cloudinary.v2.uploader.destroy(project.imgId[j]);
+                        console.log(j);
+                        console.log(project);
+                    };
                 } catch (err) {
+                    console.log("removing IDs error");
+                    console.error(err);
+                    console.log(project);
+                } finally {
+                    project.imgId = [];
+                    project.imgUrl = [];
+                };
+                console.log("Before upload new files :", project);
+                try {
+                    for (let i=0; i<filePaths.length; i++) {
+                        let result = await cloudinary.v2.uploader.upload(filePaths[i], 
+                            {
+                                folder: "square_circle/",
+                                public_id: `${req.body.project.title}_image${i}`
+                            });
+                        project.imgUrl.push(result.secure_url);
+                        project.imgId.push(result.public_id);
+                    }
+                } catch (err) {
+                    console.error(err);
                     return res.redirect('back');
                 };
             };
@@ -146,6 +168,7 @@ router.put("/project/:id", upload.array('image', 6), (req, res)=>{
             project.xPosition       = req.body.project.xPosition;
             project.yPosition       = req.body.project.yPosition;
 
+            console.log("FINAL PROJECT: ", project);
             project.save();
             res.redirect("/project/" + req.params.id);
         };
@@ -160,11 +183,13 @@ router.delete("/project/:id", (req, res)=>{
             res.redirect('back');
         }
         try {
-            await cloudinary.v2.uploader.destroy(project.imgId);
+            for (let i=0; i<project.imgId.length; i++){
+                await cloudinary.v2.uploader.destroy(project.imgId[i]);
+            }
             project.remove();
             res.redirect("/");
         } catch (err) {
-            console.error(err);
+            console.error("DELETE ERROR: ", err);
             return res.redirect('back');
         };
     });
