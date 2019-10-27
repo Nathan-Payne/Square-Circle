@@ -132,18 +132,15 @@ router.put("/project/:id", upload.array('image', 6), (req, res)=>{
                     var numberOfImages = project.imgId.length;
                     for (let j=0; j < numberOfImages; j++) {
                         await cloudinary.v2.uploader.destroy(project.imgId[j]);
-                        console.log(j);
-                        console.log(project);
                     };
                 } catch (err) {
                     console.log("removing IDs error");
                     console.error(err);
-                    console.log(project);
                 } finally {
                     project.imgId = [];
                     project.imgUrl = [];
                 };
-                console.log("Before upload new files :", project);
+                //UPLOAD NEW IMAGES SELECTED IN EDIT 
                 try {
                     for (let i=0; i<filePaths.length; i++) {
                         let result = await cloudinary.v2.uploader.upload(filePaths[i], 
@@ -155,6 +152,7 @@ router.put("/project/:id", upload.array('image', 6), (req, res)=>{
                         project.imgId.push(result.public_id);
                     }
                 } catch (err) {
+                    console.log("UPLOAD IMAGES ERROR: ")
                     console.error(err);
                     return res.redirect('back');
                 };
@@ -168,7 +166,7 @@ router.put("/project/:id", upload.array('image', 6), (req, res)=>{
             project.xPosition       = req.body.project.xPosition;
             project.yPosition       = req.body.project.yPosition;
 
-            console.log("FINAL PROJECT: ", project);
+            // console.log("FINAL PROJECT: ", project);
             project.save();
             res.redirect("/project/" + req.params.id);
         };

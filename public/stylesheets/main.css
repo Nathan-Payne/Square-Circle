@@ -301,8 +301,8 @@ section {
 }
 
 .thumbnail img {
-    height: 70%;
-    max-width: 150%;
+    height: 60%;
+    max-width: 160%;
 }
 
 .thumbnail h4, .thumbnail h6, .thumbnail p {
