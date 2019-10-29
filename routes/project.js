@@ -32,7 +32,7 @@ router.get("/create", (req, res)=>{
     res.render("create"); 
 });
 
-router.post("/create", upload.array('image', 6), async (req, res)=>{
+router.post("/create", upload.array('image', 8), async (req, res)=>{
     //use a for loop which ends when size of upload array is reached
     //cloudinary doesnt support multiple file upload so have to iterate through
     //multer array one by one.. will also need to update project model 
@@ -119,13 +119,13 @@ router.get("/project/:id/edit", async (req, res)=>{
     };
 });
 
-router.put("/project/:id", upload.array('image', 6), (req, res)=>{
+router.put("/project/:id", upload.array('image', 8), (req, res)=>{
     Project.findById(req.params.id, async function(err, project){
         if(err){
             console.log(err);
             res.redirect('back');
         } else {
-            if(req.files) {
+            if(req.files && req.files.length) {
                 var filePaths = req.files.map(file => file.path);
                 //DESTROY IMG IDS OF PROJECT IN CLOUDINARY and MONGODB
                 try {

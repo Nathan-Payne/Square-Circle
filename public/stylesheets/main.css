@@ -38,6 +38,12 @@ body {
     grid-template-rows: auto;
 }
 
+@media (max-width: 991px) {
+    #topnav {
+        grid-template-columns: 1fr 7fr;
+    }
+}
+
 #logo img {
     width: 80px;
     padding-left: 0.8rem;
@@ -55,6 +61,13 @@ body {
     align-content: center;
     grid-gap: 3.6rem;
     padding-left: 2rem;
+}
+
+@media (max-width: 767px) {
+    #links {
+        grid-gap: 1.7rem;
+        padding-left: 1rem;
+    }
 }
 
 #links a {
@@ -279,18 +292,29 @@ section {
 
 .container {
     display: grid;
-    grid-template-columns: [sidebar] 90px [content] repeat(12, 1fr);
+    grid-template-columns: [sidebar] 90px [content] repeat(12, 7vw);
     grid-template-rows: repeat(24, 15vh);
     margin: 0;
     padding: 0;
+}
+
+@media (max-width: 991px) {
+    .container {
+        grid-template-columns: [sidebar] 80px [content] repeat(12, 7vw);
+    }
+}
+@media (max-width: 767px) {
+    .container {
+        grid-template-columns: [sidebar] 70px [content] repeat(12, 6vw);
+    }
 }
 
 .thumbnail {
     /* grid-column: content / span 2; */
     /* grid-row: 1 / span 2; */
     grid-column-end: span 3;
-    grid-row-end: span 3;
-    width: 100%;
+    grid-row-end: span 2;
+    /* width: 100%; */
     text-align: start;
     box-sizing: border-box;
 }
@@ -301,9 +325,20 @@ section {
 }
 
 .thumbnail img {
-    height: 60%;
-    max-width: 160%;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
 }
+/* @media (max-width: 991px) {
+    .thumbnail img {
+        height: 70%;
+    }
+}
+@media (max-width: 767px) {
+    .thumbnail img {
+        height: 70%;
+    }
+} */
 
 .thumbnail h4, .thumbnail h6, .thumbnail p {
     margin: 0;
