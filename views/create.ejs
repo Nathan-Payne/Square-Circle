@@ -3,7 +3,7 @@
 
 <h1>Create new project</h1>
 <form action="/create" method="POST" enctype="multipart/form-data">
-    <label class="form">Project Title
+    <label class="form">Project Title (valid filenames only)
         <input type="text" name="project[title]" placeholder="Title" required>
     </label>
     <label class="form">Project Type
@@ -25,13 +25,13 @@
     <label class="form">Project Date 
         <input type="date" name="project[projectDate]">
     </label>
-    <label class="form">Image Upload
+    <label class="form">Image Upload (Maximum 10MB per image)
         <input type="file" name="image" accept="image/*" multiple required>
     </label>
-    <label class="form">Horizontal position (a number): 
+    <label class="form">Horizontal position (a number between 1-12): 
         <input type="number" name="project[xPosition]" required>
     </label>
-    <label class="form">Vertical position (a number): 
+    <label class="form">Vertical position (a number between 1-24): 
         <input type="number" name="project[yPosition]" required>
     </label>
 

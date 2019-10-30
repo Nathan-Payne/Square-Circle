@@ -47,7 +47,7 @@ router.post("/create", upload.array('image', 8), async (req, res)=>{
             public_id: `${req.body.project.title}_image${i}`
         }, (err, result)=>{
             if(err){
-                console.error(`Upload err: ${err}`);
+                console.log(`Upload err: ${err}`);
                 return res.redirect('back');
             }            
             req.body.project.imgUrl.push(result.secure_url);

@@ -16,15 +16,28 @@
 <script>
     let thumbnail = document.getElementsByClassName("thumbnail");
     let thumbProjects = <%- JSON.stringify(projects, ['_id', 'title', 'shortDesc', 'xPosition', 'yPosition']) %>;
-        
-    for (i=0; i<thumbProjects.length; i++){
-        thumbnail[i].setAttribute("id", `image${i + 1}`)
-        console.log(thumbProjects[i]);
 
-        thumbnail[i].style.gridColumnStart = thumbProjects[i].xPosition;
-        thumbnail[i].style.gridRowStart = thumbProjects[i].yPosition;
-    };
+    var x = window.matchMedia("(max-width: 767px)");
+    x.addListener(disableGrid); //attaches listener function on state changes
+    disableGrid(x); //call listener funct
 
+    function disableGrid(x){
+        if (x.matches) {
+            for (i=0; i<thumbProjects.length; i++){
+                thumbnail[i].setAttribute("id", `image${i + 1}`)
+
+                thumbnail[i].removeAttribute("style");
+                thumbnail[i].removeAttribute("style");
+            };
+        } else {
+            for (i=0; i<thumbProjects.length; i++){
+                thumbnail[i].setAttribute("id", `image${i + 1}`)
+
+                thumbnail[i].style.gridColumnStart = thumbProjects[i].xPosition;
+                thumbnail[i].style.gridRowStart = thumbProjects[i].yPosition;
+            };
+        }
+    }
 
 </script>
 

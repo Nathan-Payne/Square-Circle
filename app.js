@@ -44,8 +44,25 @@ mongoose.connection.on('error', err => {
     console.log("Ongoing squarecircle database error:", err.message)
 });
 
-
 app.use(indexRoutes);
 app.use(projectRoutes);
 
-app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`))
+app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
+
+// MEETING NOTES
+// resize main logo + center (move left) on smaller screen sizes
+// make small logo smaller
+// scroll on home page should do something - e.g. show most recent projects
+// add a button to add a row to the top of the grid 
+// add check if logged in middleware
+// add edit project button to redirect to edit page when logged in
+// resize fonts in media queries
+// make mobile friendly nav bar - either hamburger or list
+// add contact button + remove linkedin 
+// hovering in project changes color (like nav bar) - possibly add slight fade / lighter overlay
+
+
+// FUN STUFF
+// animate nav bar to slide out of small logo to the right and down on page load
+// scroll on homepage   - animate logo to resize and move to logo in top left?
+//                      - animate circle to radial wipe in then fade squarecircle text on top
