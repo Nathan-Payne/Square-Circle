@@ -1,6 +1,14 @@
 <% include ./partials/header %>
 
 <section class="container">
+    <!-- Left Navbar -->
+    <nav id="leftnav">
+            <div id="leftlinks">
+                <a href="about">Contact</a>
+                <a href="concept">Concept</a>
+            </div>
+        </nav>
+
     <% projects.forEach(function(project, index){ %>
         <div class="thumbnail fadeAnimation">
             <a href="/project/<%= project._id %>">

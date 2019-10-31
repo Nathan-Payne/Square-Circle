@@ -50,22 +50,16 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// finish sizing on mobile screens - grid-template-rows to auto to size to thumbnail
-// resize main logo + center (move left) on smaller screen sizes
-// make small logo smaller
+// finish sizing on mobile screens - hamburger menu
 // scroll on home page should do something - e.g. show most recent projects
-// add a button to add a row to the top of the grid 
+// add a button to add a row to the top of the grid - will need to change every entry in db xy position, rare admin task (time not a concern)
 // add check if logged in middleware
 // add edit project button to redirect to edit page when logged in
-// resize fonts in media queries
-// make mobile friendly nav bar - either hamburger or list
-// add contact button + remove linkedin 
-// hovering in project changes color (like nav bar) - possibly add slight fade / lighter overlay
-// add left nav to all pages with contact link 
-// ensure responsive for 4k
+// ensure responsive for 4k (check font size, image sizing)
 // check compatibility on other browsers
 // on mobile dont load all projects at once, add a scroll point at which the next 5-10 load
 // lower img quality for low resolutions
+// move js script for thumbnails into separate file
 
 
 // FUN STUFF

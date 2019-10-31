@@ -26,8 +26,14 @@ body {
     display: grid;
     width: 100%;
     height: 80vh;
-    grid-template-columns: 2fr 3fr 6fr 3fr;
+    grid-template-columns: 2fr 2.7fr 6.3fr 3fr;
     grid-template-rows: 3fr 3fr auto 2fr;
+}
+@media (max-width: 767px) {
+    .layout {
+        grid-template-columns: 2fr 2.3fr 6.7fr 3fr;
+        grid-template-rows: 3fr 3fr auto 2fr;
+    }
 }
 
 /* TOP Navbar */
@@ -200,17 +206,34 @@ section {
 #bigLogo {
     width: 60vh;
 }
+@media (max-width: 767px) {
+    #bigLogo {
+        width: 50vh;
+        padding-top:1rem;
+    }
+}
+@media (max-width: 480px) {
+    #bigLogo {
+        width: 35vh;
+        padding-top:2.2rem;
+    }
+}
 
 
 /* Bottom Navbar - email/contact info */
 #bottomnav {
-    grid-column: 3 / 5;
+    grid-column: 1 / 5;
     grid-row: 4 / 5;
     justify-items: end;
     text-align: end;
     padding-right: 4.8rem;
     padding-bottom: 2rem;
 }
+/* @media (max-width: 480px) {
+    #bottomnav {
+
+    }
+} */
 
 #bottomlink a {
     position: relative;
@@ -346,6 +369,8 @@ section {
     height: auto;
     width: 100%;
     object-fit: contain;
+    opacity: 1;
+    transition: opacity .1s ease-in-out;
 }
 @media (max-width: 991px) {
     .thumbnail img {
@@ -390,9 +415,13 @@ section {
     background-repeat: repeat-x;
     background-size: 6px 8px;
 }
-.thumbnail:hover span {
+.thumbnail:hover img {
+    opacity:0.8;
+    transition: opacity .1s ease-in-out;
+}
+.thumbnail:hover h4 span {
     color: #E66558;
-    /* transition: color 200ms; */
+    transition: color .1s;
     background-image: linear-gradient(
         to bottom, 
         #E66558 33%, 
@@ -404,7 +433,7 @@ section {
 }
 /*  REPLACED BY background-image METHOD ABOVE - covers multi-line titles
     cant transition background images yet but can fade in/out different
-    color images on ::hover via opacity
+    color images on :hover via opacity
 .thumbnail h4 span::after {
     content: "";
     position: absolute;
