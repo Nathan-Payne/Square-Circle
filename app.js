@@ -50,6 +50,7 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
+// finish sizing on mobile screens - grid-template-rows to auto to size to thumbnail
 // resize main logo + center (move left) on smaller screen sizes
 // make small logo smaller
 // scroll on home page should do something - e.g. show most recent projects
@@ -60,9 +61,15 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUA
 // make mobile friendly nav bar - either hamburger or list
 // add contact button + remove linkedin 
 // hovering in project changes color (like nav bar) - possibly add slight fade / lighter overlay
+// add left nav to all pages with contact link 
+// ensure responsive for 4k
+// check compatibility on other browsers
+// on mobile dont load all projects at once, add a scroll point at which the next 5-10 load
+// lower img quality for low resolutions
 
 
 // FUN STUFF
 // animate nav bar to slide out of small logo to the right and down on page load
 // scroll on homepage   - animate logo to resize and move to logo in top left?
 //                      - animate circle to radial wipe in then fade squarecircle text on top
+// add offsets to central axis for each project on small-medium screen sizes?

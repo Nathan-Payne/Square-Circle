@@ -47,11 +47,18 @@ body {
 
 #logo img {
     width: 80px;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
     padding-top: 1rem;
+    padding-right: 0.8rem;
     padding-bottom: 0.9rem;
+    padding-left: 0.8rem;
     margin-left: 0.3rem;
+}
+@media (max-width: 767px) {
+    #logo img {
+        width: 65px;
+        padding: 0.7rem 0.5rem 0.6rem 0.5rem;
+        margin-left: 0rem;
+    }
 }
 
 #links {
@@ -67,7 +74,7 @@ body {
 @media (max-width: 767px) {
     #links {
         grid-gap: 1.7rem;
-        padding-left: 1rem;
+        padding-left: 0.8rem;
     }
 }
 
@@ -294,7 +301,7 @@ section {
 .container {
     display: grid;
     grid-template-columns: [sidebar] 7vw [content] repeat(12, 7vw);
-    grid-template-rows: repeat(24, 15vh);
+    grid-template-rows: repeat(24, auto);
     margin: 0;
     padding: 0;
 }
@@ -308,24 +315,25 @@ section {
     .container {
         display: inline-grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(12, 1fr);
+        grid-template-rows: repeat(24, auto);
         grid-gap: 0.5rem;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 
 .thumbnail {
-    /* grid-column: content / span 2; */
-    /* grid-row: 1 / span 2; */
     grid-column-end: span 3;
     grid-row-end: span 2;
-    /* width: 100%; */
     text-align: start;
     box-sizing: border-box;
+    margin-bottom: 2.6rem;
 }
 @media (max-width: 767px) {
     .thumbnail {
         grid-column-end: span 1;
         grid-row-end: span 1;
+        text-align: center;
     }
 }
 /* LINK PROPERTIES */
@@ -355,6 +363,11 @@ section {
     margin: 0;
     padding: 0;
 }
+@media (max-width: 767px) {
+    .thumbnail h4, .thumbnail h6, .thumbnail p {
+        text-align: start;
+    }
+}
 /* Thumbnail title and underline */
 .thumbnail h4 {
     text-transform: uppercase;
@@ -377,6 +390,18 @@ section {
     background-repeat: repeat-x;
     background-size: 6px 8px;
 }
+.thumbnail:hover span {
+    color: #E66558;
+    /* transition: color 200ms; */
+    background-image: linear-gradient(
+        to bottom, 
+        #E66558 33%, 
+        transparent 33%, 
+        transparent 66%, 
+        #E66558 66%, 
+        #E66558
+    );
+}
 /*  REPLACED BY background-image METHOD ABOVE - covers multi-line titles
     cant transition background images yet but can fade in/out different
     color images on ::hover via opacity
@@ -390,6 +415,19 @@ section {
     background-color: black;
     white-space: normal;
 } */
+.thumbnail:active a h4 {
+    color: #E66558;
+}
+.thumbnail:active span {
+    background-image: linear-gradient(
+        to bottom, 
+        #E66558 33%, 
+        transparent 33%, 
+        transparent 66%, 
+        #E66558 66%, 
+        #E66558
+    );
+}
 
 .thumbnail h6 {
     color: black;
