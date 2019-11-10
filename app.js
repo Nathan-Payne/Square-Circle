@@ -60,6 +60,8 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUA
 // on mobile dont load all projects at once, add a scroll point at which the next 5-10 load
 // lower img quality for low resolutions
 // move js script for thumbnails into separate file
+// accessibility
+// sticky nav menu stops being sticky at the opposite edge of its containing block - need to fix body height on mobile
 
 
 // FUN STUFF

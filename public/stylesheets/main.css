@@ -19,6 +19,13 @@ body {
     letter-spacing: 0.01rem;
     margin-bottom: 0px;
     /* overflow-x: hidden; */
+    position: relative;
+}
+@media (max-width: 767px) {
+    body {
+    }
+}
+.content {
 }
 
 /* container grid around all except top navigation bar */
@@ -39,7 +46,11 @@ body {
 /* TOP Navbar */
 #topnav {
     display: grid;
-    width: 95vw;
+    position: sticky;
+    top: 0;
+    background-image: linear-gradient(to bottom, white, white, white, white, transparent);
+    z-index: 600;
+    width: 96vw;
     min-height: 90px;
     grid-template-columns: 1.5fr 6.5fr 4fr;
     grid-template-rows: auto;
@@ -47,7 +58,7 @@ body {
 
 @media (max-width: 991px) {
     #topnav {
-        grid-template-columns: 1fr 7fr;
+        grid-template-columns: 1fr 7fr 1fr;
     }
 }
 
@@ -127,6 +138,18 @@ body {
 
 #links a:nth-child(3) {
     grid-column: 3 / 4;
+}
+
+#nav-toggle, .hamburger-menu {
+    display: none;
+}
+@media (max-width: 767px) {
+    .hamburger-menu {
+        display: inline-block;
+    }
+    #links {
+        display: none;
+    }
 }
 
 /* LEFT Navbar */

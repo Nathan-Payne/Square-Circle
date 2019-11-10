@@ -1,25 +1,27 @@
 <% include ./partials/header %>
-
-<!-- Left Navbar -->
-<nav id="leftnav">
-    <div id="leftlinks">
-        <a href="about">Contact</a>
-        <a href="concept">Concept</a>
-    </div>
-</nav>
-
-<section class="container">
-    <% projects.forEach(function(project, index){ %>
-        <div class="thumbnail fadeAnimation">
-            <a href="/project/<%= project._id %>">
-                <img src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, {quality: 30, crop: `fit`}) %>" alt="<%= project.title %> image">
-                <h4><span><%= project.title %></span></h4> 
-                <h6><%= project.shortDesc %></h6>
-                <!-- <span style="font-size: 0.7rem;">position xy: <%= project.xPosition %>, <%= project.yPosition %></span> -->
-            </a>
+<div class="content">
+    
+    <!-- Left Navbar -->
+    <nav id="leftnav">
+        <div id="leftlinks">
+            <a href="about">Contact</a>
+            <a href="concept">Concept</a>
         </div>
-    <% }); %>
-</section>
+    </nav>
+    
+    <section class="container">
+        <% projects.forEach(function(project, index){ %>
+            <div class="thumbnail fadeAnimation">
+                <a href="/project/<%= project._id %>">
+                    <img src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, {quality: 30, crop: `fit`}) %>" alt="<%= project.title %> image">
+                    <h4><span><%= project.title %></span></h4> 
+                    <h6><%= project.shortDesc %></h6>
+                    <!-- <span style="font-size: 0.7rem;">position xy: <%= project.xPosition %>, <%= project.yPosition %></span> -->
+                </a>
+            </div>
+        <% }); %>
+    </section>
+</div>
 
 <script>
     let thumbnail = document.getElementsByClassName("thumbnail");
