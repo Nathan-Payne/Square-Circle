@@ -50,7 +50,8 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// finish sizing on mobile screens - hamburger menu
+// animate hamburger menu, move left nav inside for 560px breakpoint
+// sticky nav menu stops being sticky at the opposite edge of its containing block - need to fix body height on mobile
 // scroll on home page should do something - e.g. show most recent projects
 // add a button to add a row to the top of the grid - will need to change every entry in db xy position, rare admin task (time not a concern)
 // add check if logged in middleware
@@ -61,7 +62,6 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUA
 // lower img quality for low resolutions
 // move js script for thumbnails into separate file
 // accessibility
-// sticky nav menu stops being sticky at the opposite edge of its containing block - need to fix body height on mobile
 
 
 // FUN STUFF
