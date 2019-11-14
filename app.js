@@ -50,22 +50,18 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// animate hamburger menu, move left nav inside for 560px breakpoint
-// sticky nav menu stops being sticky at the opposite edge of its containing block - need to fix body height on mobile
-// scroll on home page should do something - e.g. show most recent projects
+// redesign home page for smallest breakpoint - remove grid
 // add a button to add a row to the top of the grid - will need to change every entry in db xy position, rare admin task (time not a concern)
 // add check if logged in middleware
 // add edit project button to redirect to edit page when logged in
-// ensure responsive for 4k (check font size, image sizing)
 // check compatibility on other browsers
 // on mobile dont load all projects at once, add a scroll point at which the next 5-10 load
 // lower img quality for low resolutions
 // move js script for thumbnails into separate file
 // accessibility
-
+// ensure responsive for 4k (check font size, image sizing)
+// scroll on home page should do something - e.g. show most recent projects
 
 // FUN STUFF
 // animate nav bar to slide out of small logo to the right and down on page load
-// scroll on homepage   - animate logo to resize and move to logo in top left?
-//                      - animate circle to radial wipe in then fade squarecircle text on top
-// add offsets to central axis for each project on small-medium screen sizes?
+// scroll on homepage - animate circle to radial wipe in then fade squarecircle text on top
