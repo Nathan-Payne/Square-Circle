@@ -1,10 +1,11 @@
 <% include ./partials/header %>
 
+<a href="/project/<%= project._id %>/edit">
+    <button>EDIT PROJECT</button>
+</a>
 
 <div class="projectpage">
     <div>
-        <!-- will need to script the addidtion of multiple
-        images from cloudinary array - use forEach -->
         <% project.imgUrl.forEach((img)=>{ %>
             <img src="<%= img %>" alt="<%= project.title %> image">
         <% }) %>

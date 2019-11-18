@@ -31,6 +31,7 @@ passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser()); 
 
 //MONGODB CONFIG
+mongoose.set('useUnifiedTopology', true);
 let url = process.env.SQUARECIRCLE_URL || 'mongodb://localhost/squarecircle';
 mongoose.connect(url, {
     useNewUrlParser: true,
@@ -50,13 +51,12 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
+// move js script for thumbnails into separate file - sort photography and art ejs
 // add check if logged in middleware
-// add edit project button to redirect to edit page when logged in
-// check compatibility on other browsers
 // on mobile dont load all projects at once, add a scroll point at which the next 5-10 load
 // lower img quality for low resolutions
-// move js script for thumbnails into separate file
 // accessibility
+// check compatibility on other browsers
 // ensure responsive for 4k (check font size, image sizing)
 // scroll on home page should do something - e.g. show most recent projects
 

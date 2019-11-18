@@ -30,6 +30,9 @@
                     <h6><%= project.shortDesc %></h6>
                     <!-- <span style="font-size: 0.7rem;">position xy: <%= project.xPosition %>, <%= project.yPosition %></span> -->
                 </a>
+                <a href="/project/<%= project._id %>/edit">
+                    <button>EDIT PROJECT</button>
+                </a>
             </div>
         <% }); %>
     </section>
