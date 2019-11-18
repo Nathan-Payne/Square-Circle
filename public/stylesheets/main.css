@@ -435,6 +435,11 @@ section {
     padding: 0.7rem;
 }
 
+.gridForm {
+    display: inline-block;
+    margin: 2rem;
+}
+
 /* SHOW page grid */
 
 .container {

@@ -77,6 +77,22 @@ router.get("/graphic-design", async (req, res) => {
         console.error(err);
     };
 });
+router.post("/graphic-design", async (req, res) => {
+    var incAmount = 1;
+    if(req.body.gridMove === "gridUp") {
+        var incAmount = -1;
+    };
+    try{
+        let projects = await Project.updateMany(
+            {projectType: "Graphic Design"},    //conditions
+            {$inc: {yPosition: incAmount}}             //update
+        );                                      //options {multi:true} not needed for updateMany
+        res.redirect('back');
+    } catch (err) {
+        console.error(err)
+    };
+});
+
 //PHOTOGRAPHY SHOW
 router.get("/photography", async (req, res) => {
     try{

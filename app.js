@@ -50,8 +50,6 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// redesign home page for smallest breakpoint - remove grid
-// add a button to add a row to the top of the grid - will need to change every entry in db xy position, rare admin task (time not a concern)
 // add check if logged in middleware
 // add edit project button to redirect to edit page when logged in
 // check compatibility on other browsers
