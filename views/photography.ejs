@@ -1,6 +1,18 @@
 <% include ./partials/header %>
 
-<div class="container">
+<form action="/photography" method="POST">
+    <label class="gridForm">Moving the Projects
+        <select name="gridMove" id="">
+            <option value="gridDown">Down the page</option>
+            <option value="gridUp">Up the page</option>
+        </select>
+    </label>
+    <label class="gridForm">
+        <input type="submit" value="MOVE">
+    </label>
+</form>
+
+<div class="content">
     <!-- Left Navbar -->
     <nav id="leftnav">
         <div id="leftlinks">
@@ -8,15 +20,28 @@
             <a href="concept">Concept</a>
         </div>
     </nav>
-
-    <% projects.forEach(function(project){ %>
-        <h3><%= project.title %></h3>
-        <h6><%= project.shortDesc %></h6>
-    <% }); %>
+    
+    <section class="container">
+        <% projects.forEach(function(project, index){ %>
+            <div class="thumbnail fadeAnimation">
+                <a href="/project/<%= project._id %>">
+                    <img src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, {quality: 30, crop: `fit`}) %>" alt="<%= project.title %> image">
+                    <h4><span><%= project.title %></span></h4> 
+                    <h6><%= project.shortDesc %></h6>
+                    <!-- <span style="font-size: 0.7rem;">position xy: <%= project.xPosition %>, <%= project.yPosition %></span> -->
+                </a>
+                <a href="/project/<%= project._id %>/edit">
+                    <button>EDIT PROJECT</button>
+                </a>
+            </div>
+        <% }); %>
+    </section>
 </div>
 
-
-
-
+<!-- required for .ejs variable (projects) to be passed to .js script file (disable-grid.js) -->
+<script type="text/javascript">
+    let thumbProjects = <%-JSON.stringify(projects, ['_id', 'title', 'shortDesc', 'xPosition', 'yPosition'])%>;
+</script>
+<script type="text/javascript" src="/scripts/disable-grid.js"></script>
 
 <% include ./partials/footer %>
