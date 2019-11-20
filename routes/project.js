@@ -1,13 +1,7 @@
-//NOTES
-//can use Project.find({}).project({_id: 0}) to select certain variables
-//Projections determine which fields are passed from the database.
-
-//can render page and pass database variable directly to html + use in script tags
-//
-
 const express = require("express");
 const router = express.Router();
 const Project = require("../models/project");
+const middleware = require("../middleware"); //index.js files automatically required when parent folder required
 
 //=========MULTIFILE UPLOAD VIA MULTER=========
 //config - memory storage may be needed if host doesn't allow disk access
@@ -76,7 +70,7 @@ router.get("/graphic-design", async (req, res) => {
     };
 });
 //increments all graphic design projects up or down grid by 1, allows new projects to be added at top of page
-router.post("/graphic-design", async (req, res) => {
+router.post("/graphic-design", middleware.isLoggedIn, async (req, res) => {
     var incAmount = 1;
     if(req.body.gridMove === "gridUp") {
         incAmount = -1;
@@ -102,7 +96,7 @@ router.get("/photography", async (req, res) => {
     };
 });
 //increments all photography projects up or down grid by 1, allows new projects to be added at top of page
-router.post("/photography", async (req, res) => {
+router.post("/photography", middleware.isLoggedIn, async (req, res) => {
     var incAmount = 1;
     if(req.body.gridMove === "gridUp") {
         incAmount = -1;
@@ -128,7 +122,7 @@ router.get("/art", async (req, res) => {
     };
 });
 //increments all art projects up or down grid by 1, allows new projects to be added at top of page
-router.post("/art", async (req, res) => {
+router.post("/art", middleware.isLoggedIn, async (req, res) => {
     var incAmount = 1;
     if(req.body.gridMove === "gridUp") {
         incAmount = -1;
@@ -156,7 +150,7 @@ router.get("/project/:id", (req, res)=>{
 });
 
 //============EDIT PROJECT ROUTE===========
-router.get("/project/:id/edit", async (req, res)=>{
+router.get("/project/:id/edit", middleware.isLoggedIn, async (req, res)=>{
     try {
         let foundProject = await Project.findById(req.params.id);
         res.render('edit', {project: foundProject});
@@ -165,7 +159,7 @@ router.get("/project/:id/edit", async (req, res)=>{
     };
 });
 
-router.put("/project/:id", upload.array('image', 8), (req, res)=>{
+router.put("/project/:id", middleware.isLoggedIn, upload.array('image', 8), (req, res)=>{
     Project.findById(req.params.id, async function(err, project){
         if(err){
             console.log(err);
@@ -220,7 +214,7 @@ router.put("/project/:id", upload.array('image', 8), (req, res)=>{
 });
 
 //=========DELETE PROJECT ROUTE============
-router.delete("/project/:id", (req, res)=>{
+router.delete("/project/:id", middleware.isLoggedIn, (req, res)=>{
     Project.findById(req.params.id, async (err, project)=>{
         if (err) {
             console.error(err);
