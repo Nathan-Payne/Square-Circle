@@ -26,6 +26,12 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 
+//custom middleware
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+});
+
 passport.use(new LocalStrategy(Admin.authenticate()));   
 passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser()); 
@@ -51,7 +57,6 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// move js script for thumbnails into separate file - sort photography and art ejs
 // add check if logged in middleware
 // on mobile dont load all projects at once, add a scroll point at which the next 5-10 load
 // lower img quality for low resolutions

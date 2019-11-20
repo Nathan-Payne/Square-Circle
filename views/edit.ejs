@@ -3,8 +3,8 @@
 
 <h1>Editing <%= project.title %></h1>
 <form action="/project/<%= project._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-    <label class="form">Project Title (Valid filenames only)
-        <input type="text" name="project[title]" value="<%=project.title%>">
+    <label class="form">Project Title (Can not edit title)
+        <input type="text" name="project[title]" value="<%=project.title%>" readonly>
     </label>
     <label class="form">Project Type
         <select name="project[projectType]" id="">

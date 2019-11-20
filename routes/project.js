@@ -33,11 +33,9 @@ router.get("/create", (req, res)=>{
 });
 
 router.post("/create", upload.array('image', 8), async (req, res)=>{
-    //use a for loop which ends when size of upload array is reached
+    //use a for loop which ends when size of upload array is reached (limit is 8 here)
     //cloudinary doesnt support multiple file upload so have to iterate through
-    //multer array one by one.. will also need to update project model 
-    //(to include arrays for images and id's) and thumnail templates 
-    //(to use first image) and edit route/view and project view to show all images
+    //multer array one by one
     var filePaths = req.files.map(file => file.path) //map creates new array from funct acting on elements of existing array
     req.body.project.imgUrl = [];
     req.body.project.imgId = [];
@@ -77,15 +75,16 @@ router.get("/graphic-design", async (req, res) => {
         console.error(err);
     };
 });
+//increments all graphic design projects up or down grid by 1, allows new projects to be added at top of page
 router.post("/graphic-design", async (req, res) => {
     var incAmount = 1;
     if(req.body.gridMove === "gridUp") {
-        var incAmount = -1;
+        incAmount = -1;
     };
     try{
         let projects = await Project.updateMany(
             {projectType: "Graphic Design"},    //conditions
-            {$inc: {yPosition: incAmount}}             //update
+            {$inc: {yPosition: incAmount}}      //update
         );                                      //options {multi:true} not needed for updateMany
         res.redirect('back');
     } catch (err) {
@@ -102,6 +101,22 @@ router.get("/photography", async (req, res) => {
         console.error(err);
     };
 });
+//increments all photography projects up or down grid by 1, allows new projects to be added at top of page
+router.post("/photography", async (req, res) => {
+    var incAmount = 1;
+    if(req.body.gridMove === "gridUp") {
+        incAmount = -1;
+    };
+    try{
+        let projects = await Project.updateMany(
+            {projectType: "Photography"},       //conditions
+            {$inc: {yPosition: incAmount}}      //update
+        );                                      //options {multi:true} not needed for updateMany
+        res.redirect('back');
+    } catch (err) {
+        console.error(err)
+    };
+});
 //ART SHOW
 router.get("/art", async (req, res) => {
     try{
@@ -109,8 +124,23 @@ router.get("/art", async (req, res) => {
         res.render('art', {projects: projects, cloudinary: cloudinary});
     } catch (err) {
         console.error(err);
-        console.log(projects);
         res.redirect("/");
+    };
+});
+//increments all art projects up or down grid by 1, allows new projects to be added at top of page
+router.post("/art", async (req, res) => {
+    var incAmount = 1;
+    if(req.body.gridMove === "gridUp") {
+        incAmount = -1;
+    };
+    try{
+        let projects = await Project.updateMany(
+            {projectType: "Art"},               //conditions
+            {$inc: {yPosition: incAmount}}      //update
+        );                                      //options {multi:true} not needed for updateMany
+        res.redirect('back');
+    } catch (err) {
+        console.error(err)
     };
 });
 
