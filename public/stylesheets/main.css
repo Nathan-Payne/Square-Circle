@@ -679,6 +679,115 @@ section {
     overflow-wrap: break-word;
 }
 
+/* ABOUT PAGE */
+.aboutpage {
+    width: 70vw;
+    margin: 0.5rem auto 5rem auto;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.45rem;
+    overflow-wrap: break-word;
+}
+@media(max-width: 767px){
+    .aboutpage {
+        width: 65vw;
+        margin: 0.5rem auto 5rem auto;
+    }
+}
+@media(max-width: 560px){
+    .aboutpage {
+        width: 80vw;
+        margin: 0.5rem auto 5rem auto;
+    }
+}
+.aboutpage h1 {
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    margin: 1.3rem 0.5rem 1.8rem 0rem;   
+}
+
+.aboutpage section {
+    margin: 0 0 6rem 0;
+}
+
+.aboutpage p {
+    margin: 0 0 0 0;
+}
+
+#email {
+    margin: 1.5rem 0;
+}
+
+.aboutpage .highlight {
+    color: #E66558;
+}
+.aboutpage .bold {
+    font-weight: 900;
+}
+/* Must place .underline above span to underline */
+.aboutpage .underline span {
+    position: relative;
+    padding-bottom: 1px;
+    background-image: linear-gradient(
+        to bottom, 
+        black 33%, 
+        transparent 33%, 
+        transparent 66%, 
+        black 66%, 
+        black
+    );
+    background-position: 0 1.03em;
+    background-repeat: repeat-x;
+    background-size: 6px 8px;
+}
+
+.aboutpage .colored-underline span {
+    position: relative;
+    padding-bottom: 1px;
+    background-image: linear-gradient(
+        to bottom, 
+        #E66558 33%, 
+        transparent 33%, 
+        transparent 66%, 
+        #E66558 66%, 
+        #E66558
+    );
+    background-position: 0 1.03em;
+    background-repeat: repeat-x;
+    background-size: 6px 8px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2;
+}
+
+.example-links {
+    color: #E66558;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    text-align: end;
+}
+
+
 
 /* ANIMATIONS */
 .fadeAnimation {
