@@ -218,7 +218,7 @@ body {
     display: inline-block;
     position: absolute;
     max-width: 90px;
-    padding-left: 0.6rem;
+    padding-left: 0.9rem;
     padding-right: 0.2rem;
     padding-top: 0.8rem;
     margin: 0rem;
@@ -463,8 +463,8 @@ section {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(24, auto);
         grid-gap: 0.5rem;
-        margin-left: 8%;
-        margin-right: 5%;
+        margin-left: 9%;
+        margin-right: 4%;
     }
 }
 @media (max-width: 560px) {
@@ -600,12 +600,22 @@ section {
     margin-bottom: 5rem;
 }
 
-.projectpage div {
-    width: 60vw;
+.projectpage article {
+    width: 65vw;
+}
+@media(max-width: 767px){
+    .projectpage article {
+        width: 85vw;
+    }
 }
 
-.projectpage div img {
-    width: 60vw;
+.projectpage article img {
+    width: 65vw;
+}
+@media(max-width: 767px){
+    .projectpage article img {
+        width: 85vw;
+    }
 }
 
 .projectpage h1 {
@@ -631,12 +641,49 @@ section {
     margin-bottom: 1.7rem;
 }
 
+/* Concept Page */
+
+.conceptpage {
+    width: 65vw;
+    margin: 0.5rem auto 5rem auto;
+}
+@media(max-width: 767px){
+    .conceptpage {
+        width: 65vw;
+        margin: 0.5rem auto 5rem auto;
+    }
+}
+@media(max-width: 560px){
+    .conceptpage {
+        width: 80vw;
+        margin: 0.5rem auto 5rem auto;
+    }
+}
+
+.conceptpage h1 {
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    margin: 1.3rem 0.5rem 1.8rem 0rem;
+}
+
+.conceptpage article {
+    display: flex;
+    flex-direction: column;
+}
+
+.conceptpage p {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.45rem;
+    margin: 0;
+    overflow-wrap: break-word;
+}
 
 
 /* ANIMATIONS */
 .fadeAnimation {
     opacity: 1;
-    animation: fadeInLoad 800ms ease-in-out 80ms;
+    animation: fadeInLoad 800ms ease-in-out;
 }
 
 @keyframes fadeInLoad {

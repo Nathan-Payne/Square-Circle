@@ -6,17 +6,17 @@
     </a>
 <% } %>
 
-<div class="projectpage">
-    <div>
+<section class="projectpage">
+    <article>
         <% project.imgUrl.forEach((img)=>{ %>
-            <img src="<%= img %>" alt="<%= project.title %> image">
+            <img src="<%= img %>" alt="Image of the <%= project.title %> project">
         <% }) %>
         <h1><%= project.title %></h1>
         <p><%= project.englishDesc %></p>
         <div id="greybar"></div>
         <p><%= project.lithuanianDesc %></p>
-    </div>
-</div>
+    </article>
+</section>
 
 
 <% include ./partials/footer %>
