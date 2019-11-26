@@ -1,16 +1,18 @@
 <% include ./partials/header %>
 
-<form action="/art" method="POST">
-    <label class="gridForm">Moving the Projects
-        <select name="gridMove" id="">
-            <option value="gridDown">Down the page</option>
-            <option value="gridUp">Up the page</option>
-        </select>
-    </label>
-    <label class="gridForm">
-        <input type="submit" value="MOVE">
-    </label>
-</form>
+<% if(currentUser){ %>
+    <form action="/art" method="POST">
+        <label class="gridForm">Moving the Projects
+            <select name="gridMove" id="">
+                <option value="gridDown">Down the page</option>
+                <option value="gridUp">Up the page</option>
+            </select>
+        </label>
+        <label class="gridForm">
+            <input type="submit" value="MOVE">
+        </label>
+    </form>
+<% } %>
 
 <div class="content">
     <!-- Left Navbar -->

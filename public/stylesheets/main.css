@@ -92,7 +92,7 @@ body {
     align-content: center;
     grid-gap: 3.6rem;
     padding-left: 2rem;
-    transition: 300ms all ease-in-out;
+    /* transition: 300ms all ease-in-out; */
 }
 
 @media (max-width: 767px) {
@@ -322,7 +322,7 @@ section {
     grid-column: 1 / 5;
     grid-row: 4 / 5;
     justify-items: end;
-    text-align: end;
+    text-align: right;
     padding-right: 4.8rem;
     padding-bottom: 2rem;
 }

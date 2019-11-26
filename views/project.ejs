@@ -1,8 +1,10 @@
 <% include ./partials/header %>
 
-<a href="/project/<%= project._id %>/edit">
-    <button>EDIT PROJECT</button>
-</a>
+<% if(currentUser){ %>
+    <a href="/project/<%= project._id %>/edit">
+        <button>EDIT PROJECT</button>
+    </a>
+<% } %>
 
 <div class="projectpage">
     <div>

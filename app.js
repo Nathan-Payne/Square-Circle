@@ -57,13 +57,19 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// add check if logged in middleware
+// accessibility/SEO - research
+// check compatibility on other browsers - research
+// thumbnail fade in on project pages is not functioning as intended
+// process.env.SQUARECIRCLE_URL -set on server
+// hosting server is php/apache/mariaDB(MySQL) either have to learn these or shift to a vps, 
+// cant work around with apache proxy due to lack of ssh access, must be able to point to domain
+
+// AFTER LIVE SITE UP
 // on mobile dont load all projects at once, add a scroll point at which the next 5-10 load
 // lower img quality for low resolutions
-// accessibility
-// check compatibility on other browsers
 // ensure responsive for 4k (check font size, image sizing)
 // scroll on home page should do something - e.g. show most recent projects
+// possible email form?
 
 // FUN STUFF
 // animate nav bar to slide out of small logo to the right and down on page load
