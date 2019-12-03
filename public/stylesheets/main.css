@@ -212,6 +212,18 @@ body {
         }
     }
 }
+#links .activePage {
+    color: #E66558;
+}
+#links .activePage::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    bottom: 0.49rem;
+    background-color: #E66558;
+}
 
 /* LEFT Navbar */
 #leftnav {
@@ -284,6 +296,18 @@ body {
     grid-row: 2 / 3;
 }
 
+#leftlinks .activePage {
+    color: #E66558;
+}
+#leftlinks .activePage::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 3px;
+    left: -1px;
+    background-color: #E66558;
+}
 
 /* HOMEPAGE */
 section {

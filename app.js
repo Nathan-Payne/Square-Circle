@@ -57,7 +57,6 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// about / concept pages
 // make active pages links coloured
 // process.env.SQUARECIRCLE_URL -set on server
 // hosting server is php/apache/mariaDB(MySQL) either have to learn these or shift to a vps, 
