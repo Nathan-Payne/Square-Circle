@@ -786,7 +786,9 @@ section {
     font-size: 0.8rem;
     text-align: end;
 }
-
+.black-link a:visited{
+    color: black;
+}
 
 
 /* ANIMATIONS */
