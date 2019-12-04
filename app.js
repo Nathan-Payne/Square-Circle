@@ -19,7 +19,7 @@ app.use(methodOverride("_method"));
 
 //PASSPORT CONFIG
 app.use(require('express-session')({
-    secret: "PawParty",
+    secret: process.env.EXPRESS_SESSION_SECRET,
     resave: false,
     saveUninitialized: false
 }));
@@ -38,7 +38,7 @@ passport.deserializeUser(Admin.deserializeUser());
 
 //MONGODB CONFIG
 mongoose.set('useUnifiedTopology', true);
-let url = process.env.SQUARECIRCLE_URL || 'mongodb://localhost/squarecircle';
+let url = 'mongodb://' + process.env.MONGO_USERNAME + ':' + process.env.MONGO_PASSWORD + '@localhost/squarecircle';
 mongoose.connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true
@@ -57,15 +57,15 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// make active pages links coloured
 // process.env.SQUARECIRCLE_URL -set on server
-// hosting server is php/apache/mariaDB(MySQL) either have to learn these or shift to a vps, 
-// cant work around with apache proxy due to lack of ssh access, must be able to point to domain
+// HOST ON VPS - dwn squarecircleUser
 
 // AFTER LIVE SITE UP
-// check compatibility on other browsers and OS - iOS/android, safari
+// immediately check compatibility on - iOS/android, safari
+// polyfill if neccessary
+
 // on mobile dont load all projects at once, add a scroll point at which the next 5-10 load
-// lower img quality for low resolutions
+// lower img quality for low resolutions - "lazy loading" design pattern
 // ensure responsive for 2k/4k (check font size, image sizing/quality)
 // semantic urls / permalinks (each projects title should appear in URL for that project page)
 // scroll on home page should do something - e.g. show most recent projects
