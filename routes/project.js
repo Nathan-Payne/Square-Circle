@@ -22,11 +22,11 @@ cloudinary.config({
 
 //==========ROUTES==================================
 //=======Create new project========
-router.get("/create", (req, res)=>{
+router.get("/create", middleware.isLoggedIn, (req, res)=>{
     res.render("create"); 
 });
 
-router.post("/create", upload.array('image', 8), async (req, res)=>{
+router.post("/create", middleware.isLoggedIn, upload.array('image', 8), async (req, res)=>{
     //use a for loop which ends when size of upload array is reached (limit is 8 here)
     //cloudinary doesnt support multiple file upload so have to iterate through
     //multer array one by one

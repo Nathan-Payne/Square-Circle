@@ -1,4 +1,5 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();                    //ensure .env file is present in root dir of project
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
@@ -38,7 +39,7 @@ passport.deserializeUser(Admin.deserializeUser());
 
 //MONGODB CONFIG
 mongoose.set('useUnifiedTopology', true);
-let url = 'mongodb://' + process.env.MONGO_USERNAME + ':' + process.env.MONGO_PASSWORD + '@localhost/squarecircle';
+let url = 'mongodb://localhost:27017/squarecircle';
 mongoose.connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true
@@ -57,7 +58,10 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${ PORT } \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// process.env.SQUARECIRCLE_URL -set on server
+// may need to rewrite password functionality using bcrypt or alternative to passportJS and salting in mongodb
+// add fade animation on page load to images on project pages
+// set up nginx ssl options with domain (port 443)
+// check git interaction from local push 
 // HOST ON VPS - dwn squarecircleUser
 
 // AFTER LIVE SITE UP
