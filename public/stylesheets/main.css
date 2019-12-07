@@ -560,14 +560,15 @@ section {
     background-image: linear-gradient(
         to bottom, 
         black 33%, 
-        rgba(255,255,255,0) 33%, 
-        rgba(255,255,255,0) 66%, 
+        rgba(0,0,0,0) 33%, 
+        rgba(0,0,0,0) 66%, 
         black 66%, 
         black
     );
     background-position: 0 1.03em;
     background-repeat: repeat-x;
     background-size: 6px 8px;
+    -webkit-background-size: 6px 8px;
 }
 .thumbnail:hover img {
     opacity:0.8;
@@ -584,6 +585,7 @@ section {
         #E66558 66%, 
         #E66558
     );
+    background-size: 6px 8px;
 }
 /*  REPLACED BY background-image METHOD ABOVE - covers multi-line titles
     cant transition background images yet but can fade in/out different
