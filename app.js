@@ -63,7 +63,6 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// remove nav transparency
 // Sticky the bottom and side navs
 // add most recent graphic design projects to home page instead of large logo
 // look into language En/Lt for entire site

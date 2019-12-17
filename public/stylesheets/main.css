@@ -1,12 +1,15 @@
 /* Accent color #E66558  */
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900&display=swap');
-/* 
+
 html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
+	/* box-sizing: border-box; */
+}
+
+/* *,
+*:before,
+*:after {
+	box-sizing: inherit;
 } */
 
 body {
@@ -16,13 +19,8 @@ body {
 	font-size: 1rem;
 	letter-spacing: 0.01rem;
 	margin-bottom: 0px;
-	/* overflow-x: hidden; */
-	position: relative;
 }
-@media (max-width: 767px) {
-	body {
-	}
-}
+
 /* container grid around all except top navigation bar */
 .layout {
 	display: grid;
@@ -229,14 +227,12 @@ body {
 /* LEFT Navbar */
 #leftnav {
 	display: inline-block;
-	position: absolute;
-	max-width: 90px;
+	position: fixed;
+	top: 15vh;
+	max-width: 60px;
 	padding-left: 0.9rem;
-	padding-right: 0.2rem;
-	padding-top: 0.8rem;
+	padding-top: 1rem;
 	margin: 0rem;
-	z-index: 2;
-
 	grid-column: 1 / 2;
 	grid-row: 1 / 3;
 }
@@ -472,7 +468,8 @@ section {
 	grid-template-rows: repeat(24, auto);
 	margin: 0;
 	padding: 0;
-	z-index: 1;
+	/* position: absolute; */
+	z-index: 7;
 }
 
 @media (max-width: 991px) {
@@ -674,19 +671,23 @@ section {
 /* Concept Page */
 
 .conceptpage {
+	display: inline-flex;
+	flex-direction: column;
+	z-index: 7;
 	width: 65vw;
-	margin: 0.5rem auto 5rem auto;
+	margin-left: 15vw;
+	margin-bottom: 5rem;
 }
 @media (max-width: 767px) {
 	.conceptpage {
 		width: 65vw;
-		margin: 0.5rem auto 5rem auto;
+		margin-left: 15vw;
 	}
 }
 @media (max-width: 560px) {
 	.conceptpage {
 		width: 80vw;
-		margin: 0.5rem auto 5rem auto;
+		margin-left: 5vw;
 	}
 }
 
@@ -711,8 +712,11 @@ section {
 
 /* ABOUT PAGE */
 .aboutpage {
-	width: 70vw;
-	margin: 0.5rem auto 5rem auto;
+	display: inline-flex;
+	flex-direction: column;
+	z-index: 7;
+	max-width: 70vw;
+	margin-left: 15vw;
 	font-weight: 400;
 	font-size: 1.1rem;
 	line-height: 1.45rem;
@@ -721,13 +725,13 @@ section {
 @media (max-width: 767px) {
 	.aboutpage {
 		width: 65vw;
-		margin: 0.5rem auto 5rem auto;
+		margin-left: 15vw;
 	}
 }
 @media (max-width: 560px) {
 	.aboutpage {
 		width: 80vw;
-		margin: 0.5rem auto 5rem auto;
+		margin-left: 5vw;
 	}
 }
 .aboutpage h1 {
@@ -818,6 +822,15 @@ section {
 }
 .black-link a:visited {
 	color: black;
+}
+
+#veryBottom {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	width: 100vw;
+	padding: 5rem;
+	z-index: -2;
 }
 
 /* ANIMATIONS */
