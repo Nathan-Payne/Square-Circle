@@ -26,8 +26,8 @@ router.get('/create', middleware.isLoggedIn, (req, res) => {
 	res.render('create');
 });
 
-router.post('/create', middleware.isLoggedIn, upload.array('image', 12), async (req, res) => {
-	//use a for loop which ends when size of upload array is reached (limit is 8 here)
+router.post('/create', middleware.isLoggedIn, upload.array('image', 30), async (req, res) => {
+	//use a for loop which ends when size of upload array is reached (limit is 30 here)
 	//cloudinary doesnt support multiple file upload so have to iterate through
 	//multer array one by one
 	var filePaths = req.files.map((file) => file.path); //map creates new array from funct acting on elements of existing array
@@ -163,7 +163,7 @@ router.get('/project/:id/edit', middleware.isLoggedIn, async (req, res) => {
 	}
 });
 
-router.put('/project/:id', middleware.isLoggedIn, upload.array('image', 12), (req, res) => {
+router.put('/project/:id', middleware.isLoggedIn, upload.array('image', 30), (req, res) => {
 	Project.findById(req.params.id, async function(err, project) {
 		if (err) {
 			console.log(err);

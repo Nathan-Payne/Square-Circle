@@ -468,7 +468,6 @@ section {
 	grid-template-rows: repeat(24, auto);
 	margin: 0;
 	padding: 0;
-	/* position: absolute; */
 	z-index: 7;
 }
 
@@ -479,11 +478,14 @@ section {
 }
 @media (max-width: 767px) {
 	.container {
-		display: inline-grid;
-		height: auto;
+		/* display: inline-grid;
 		grid-template-columns: repeat(1, 1fr);
 		grid-template-rows: repeat(24, auto);
-		grid-gap: 0.5rem;
+		grid-gap: 0.5rem; */
+		display: inline-flex;
+		flex-direction: column-reverse;
+		flex-basis: auto;
+		height: auto;
 		margin-left: 9%;
 		margin-right: 4%;
 	}
