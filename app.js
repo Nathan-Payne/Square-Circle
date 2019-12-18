@@ -63,7 +63,8 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// Sticky the bottom and side navs
+// upload graphic design projects - email to check ok
+// Sticky the bottom nav
 // add most recent graphic design projects to home page instead of large logo
 // look into language En/Lt for entire site
 

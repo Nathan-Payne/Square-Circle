@@ -8,6 +8,8 @@
 
 <section class="projectpage">
     <article>
+        <!-- removes first element from imgUrl's on project page to prevent image duplication with cover pic -->
+        <% project.imgUrl.shift() %>
         <% project.imgUrl.forEach((img)=>{ %>
             <img src="<%= img %>" alt="Image of the <%= project.title %> project">
         <% }) %>
