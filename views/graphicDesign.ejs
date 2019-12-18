@@ -27,11 +27,12 @@
         <% projects.forEach(function(project, index){ %>
             <article class="thumbnail fadeAnimation">
                 <a href="/project/<%= project._id %>">
-                    <img src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, {quality: 30, crop: `fit`}) %>" alt="<%= project.title %> image">
+                    <img src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, {quality: 28, crop: `fit`}) %>" alt="<%= project.title %> image">
                     <h4><span><%= project.title %></span></h4> 
                     <h6><%= project.shortDesc %></h6>
                 </a>
                 <% if(currentUser){ %>
+                    <h6>Current position: <%= project.xPosition %>, <%= project.yPosition %></h6>
                     <a href="/project/<%= project._id %>/edit">
                         <button>EDIT PROJECT</button>
                     </a>

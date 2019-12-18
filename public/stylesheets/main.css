@@ -2,10 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900&display=swap');
 
-html {
-	/* box-sizing: border-box; */
-}
-
 /* *,
 *:before,
 *:after {
@@ -519,7 +515,7 @@ section {
 
 .thumbnail img {
 	height: auto;
-	width: 100%;
+	width: 90%;
 	object-fit: contain;
 	opacity: 1;
 	transition: opacity .1s ease-in-out;
@@ -630,6 +626,9 @@ section {
 }
 
 .projectpage article {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
 	width: 65vw;
 }
 @media (max-width: 767px) {
@@ -639,7 +638,9 @@ section {
 }
 
 .projectpage article img {
-	width: 65vw;
+	width: 55vw;
+	margin-bottom: 0.5rem;
+	align-self: center;
 }
 @media (max-width: 767px) {
 	.projectpage article img {
@@ -663,9 +664,10 @@ section {
 }
 
 .projectpage #greybar {
-	content: "";
+	content: " ";
 	background-color: rgba(211, 211, 211, 0.58);
 	height: 0.6rem;
+	width: 100%;
 	margin-top: 1.7rem;
 	margin-bottom: 1.7rem;
 }
