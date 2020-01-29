@@ -64,7 +64,6 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE
 
 // MEETING NOTES
 // add random projects to homepage in random places
-// links working on project page description
 // internal links for pink text on about page
 // add language tab to project, about, concept pages
 // edit project button on edit page should say SAVE CHANGES - style buttons appropriately
