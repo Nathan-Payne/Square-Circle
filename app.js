@@ -64,7 +64,6 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE
 
 // MEETING NOTES
 // add random projects to homepage in random places
-// internal links for pink text on about page
 // add language tab to project, about, concept pages
 // edit project button on edit page should say SAVE CHANGES - style buttons appropriately
 /* make grid easier to use: finer control using JS - perhaps another database entry object {w: , a: , s: , d: } 
@@ -72,6 +71,7 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE
 */
 // optimise images to use lazy load/pagination and html picture tags with various image sizes and qualities
 // blank image placeholder before image load / ultra low res version load with priority
+// internal links for pink text on about page
 
 // AFTER LIVE SITE UP
 // HOST ON VPS - dwn squarecircleUser (DONE)

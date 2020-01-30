@@ -84,7 +84,6 @@ body {
 	align-content: center;
 	grid-gap: 3.6rem;
 	padding-left: 2rem;
-	/* transition: 300ms all ease-in-out; */
 }
 
 @media (max-width: 767px) {
@@ -684,19 +683,55 @@ section {
 	}
 }
 
+.projectpage #projectTitleSpace {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+}
+
 .projectpage h1 {
 	text-transform: uppercase;
 	font-size: 2.7rem;
-	margin-top: 1.3rem;
-	margin-bottom: 1.3rem;
+	margin: 1.3rem 0 1.3rem 0;
 }
 
-.projectpage p {
+.projectpage .descText {
+	display: none;
 	font-weight: 400;
 	font-size: 1.2rem;
 	line-height: 1.45rem;
 	margin: 0;
 	overflow-wrap: break-word;
+}
+
+.changeLang {
+	padding: 1rem 1rem 1rem 1rem;
+	margin: 0.3rem 3rem 0.3rem 0;
+	font-weight: 900;
+	font-family: inherit;
+	font-size: 1.1rem;
+}
+
+button {
+	border: none;
+	text-decoration: none;
+	background: white;
+	color: #e66558;
+	cursor: pointer;
+	text-align: center;
+	transition: background 250ms ease-in-out, transform 150ms ease;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+	outline: 2px solid #e66558;
+}
+
+.projectpage .activeTab {
+	display: block;
 }
 
 .projectpage #greybar {
