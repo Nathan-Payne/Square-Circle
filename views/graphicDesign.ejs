@@ -46,7 +46,7 @@
 
 <!-- required for .ejs variable (projects) to be passed to .js script file (disable-grid.js) -->
 <script type="text/javascript">
-    let thumbProjects = <%-JSON.stringify(projects, ['_id', 'title', 'shortDesc', 'xPosition', 'yPosition'])%>;
+    let thumbProjects = <%-JSON.stringify(projects, ['_id', 'title', 'shortDesc', 'xPosition', 'yPosition', 'xFine', 'yFine'])%>;
 </script>
 <script type="text/javascript" src="/scripts/disable-grid.js"></script>
 <script type="text/javascript" src="/scripts/activePage.js"></script>

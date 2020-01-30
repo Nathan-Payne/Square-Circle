@@ -27,13 +27,6 @@
 
 <!-- replaces any found url within the description from database with HTML anchor tag for that link -->
 <script type="text/javascript" src="/scripts/linkify.js"></script>
-<script type="text/javascript">
-let langButton = document.querySelector("button.changeLang");
-let engDesc = document.querySelector("#engDesc");
-let lithDesc = document.querySelector("#lithDesc");
-langButton.addEventListener('click', ()=>{
-    engDesc.classList.toggle("activeTab");
-    lithDesc.classList.toggle("activeTab");
-});
-</script>
+<!-- Toggles language option on each project page -->
+<script type="text/javascript" src="/scripts/languageToggle.js"></script>
 <% include ./partials/footer %>

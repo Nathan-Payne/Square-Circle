@@ -63,9 +63,6 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-/* make grid easier to use: finer control using JS - perhaps another database entry object {w: , a: , s: , d: } 
-    indicating pixel amount to pass to JS to move from original grid position - css translate(x,y)
-*/
 // add random projects to homepage in random places
 // optimise images to use lazy load/pagination and html picture tags with various image sizes and qualities
 // blank image placeholder before image load / ultra low res version load with priority

@@ -208,6 +208,8 @@ router.put('/project/:id', middleware.isLoggedIn, upload.array('image', 30), (re
 			project.projectDate = req.body.project.projectDate;
 			project.xPosition = req.body.project.xPosition;
 			project.yPosition = req.body.project.yPosition;
+			project.xFine = req.body.project.xFine;
+			project.yFine = req.body.project.yFine;
 
 			// console.log("FINAL PROJECT: ", project);
 			project.save();

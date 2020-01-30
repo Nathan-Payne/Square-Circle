@@ -28,11 +28,17 @@
     <label class="form">Image Upload (Maximum 10MB per image)
         <input type="file" name="image" accept="image/*" multiple required>
     </label>
-    <label class="form">Horizontal position (a number between 1-12): 
+    <label class="form">Horizontal grid position (a number between 1-12): 
         <input type="number" name="project[xPosition]" required>
     </label>
-    <label class="form">Vertical position (a number between 1-24): 
+    <label class="form">Vertical grid position (a number between 1-24): 
         <input type="number" name="project[yPosition]" required>
+    </label>
+    <label class="form">Horizontal fine position (-12 to +12): 
+        <input type="number" name="project[xFine]">
+    </label>
+    <label class="form">Vertical fine position (-12 to +12): 
+        <input type="number" name="project[yFine]">
     </label>
 
     <label class="form">Create the project
