@@ -63,12 +63,10 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// add random projects to homepage in random places
-// add language tab to project, about, concept pages
-// edit project button on edit page should say SAVE CHANGES - style buttons appropriately
 /* make grid easier to use: finer control using JS - perhaps another database entry object {w: , a: , s: , d: } 
-    indicating pixel amount to pass to JS to move from original grid position.. look into drag and drop
+    indicating pixel amount to pass to JS to move from original grid position - css translate(x,y)
 */
+// add random projects to homepage in random places
 // optimise images to use lazy load/pagination and html picture tags with various image sizes and qualities
 // blank image placeholder before image load / ultra low res version load with priority
 // internal links for pink text on about page
@@ -79,7 +77,7 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE
 // set up nginx ssl options with domain (port 443) (if requested)
 
 // Possible future updates
-// lower img quality for low resolutions
+// add language tab to about / concept pages - require translation
 // may need to rewrite password functionality using bcrypt or alternative to passportJS and salting in mongodb
 // ensure responsive for 2k/4k (font size, image sizing/quality)
 // semantic urls / permalinks (each projects title should appear in URL for that project page)

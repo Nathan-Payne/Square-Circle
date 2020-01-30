@@ -713,6 +713,10 @@ section {
 	font-size: 1.1rem;
 }
 
+.projectpage .activeTab {
+	display: block;
+}
+
 button {
 	border: none;
 	text-decoration: none;
@@ -725,13 +729,13 @@ button {
 	-moz-appearance: none;
 }
 
-button:hover,
-button:focus {
+button:hover {
 	outline: 2px solid #e66558;
 }
 
-.projectpage .activeTab {
-	display: block;
+button:focus {
+	outline: none;
+	text-decoration: underline;
 }
 
 .projectpage #greybar {
