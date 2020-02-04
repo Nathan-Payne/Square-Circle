@@ -10,14 +10,16 @@
     </nav>
 
     <!-- Page Content  -->
-    <section>
+    <section id="home-section">
         <div>
             <img id="bigLogo" src="../images/final_logo.png" alt="Square & Circle Graphic Design Logo Image">
         </div>
     </section>
 
-    <!-- Bottom Navbar -->
-    <nav id="bottomnav">
+    <% include ./partials/socialnav %>
+
+    <!-- Bottom Navbar Homepage Only-->
+    <nav id="bottomnavHomeResponsive">
         <div id="bottomlink">
             <a href="about">
                 <span id="landingname">Gabrielė Vingraitė </span> – 
@@ -28,14 +30,14 @@
         </div>
     </nav>
 
-    <!-- Right Navbar -->
-    <nav id="rightnav">
-        <div id="rightlinks">
+    <!-- Right Navbar Homepage Only-->
+
+    <nav id="socialnavHomeResponsive">
+        <div id="sociallinks">
             <a href="https://www.behance.net/Gabriele_Ving">behance</a>
             <a href="https://www.instagram.com/square_and_circle_ideas/">instagram</a>
         </div>
     </nav>
-
 </div>
 
 <% include ./partials/footer %>
