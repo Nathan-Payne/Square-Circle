@@ -287,6 +287,11 @@ body {
 }
 
 /* HOMEPAGE */
+#split-screen {
+	display: flex;
+	margin: 0 auto;
+}
+
 #home-section {
 	display: flex;
 	justify-content: center;
@@ -311,6 +316,46 @@ body {
 		width: 55vw;
 		padding: 0;
 	}
+}
+
+#example-projects {
+	display: inline-grid;
+	/* position: absolute; */
+	top: 2vh;
+	right: 6vw;
+	z-index: 601;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-column-gap: 2rem;
+	grid-row-gap: 1rem;
+	grid-auto-flow: column;
+}
+
+.box1 {
+	position: relative;
+	top: 0rem;
+	left: -1rem;
+	height: 7rem;
+	width: 9rem;
+}
+.box2 {
+	position: relative;
+	top: -2rem;
+	height: 7rem;
+	width: 9rem;
+	background-color: orangered;
+}
+.box3 {
+	position: relative;
+	top: -3rem;
+	left: 1rem;
+	height: 7rem;
+	width: 9rem;
+	background-color: cyan;
+}
+
+#example-projects img {
+	max-width: 100%;
 }
 
 /* Bottom Navbar - email/contact info */
