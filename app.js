@@ -64,7 +64,6 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE
 
 // MEETING NOTES
 // add random projects to homepage in random places
-// translucent square + translucent circle containing collage of random project pics - clickable
 // optimise images to use lazy load/pagination and html picture tags with various image sizes and qualities
 // blank image placeholder before image load / ultra low res version load with priority
 // internal links for pink text on about page

@@ -47,18 +47,24 @@
     </section>
     
     <article id="example-projects">
-        <div class="box1">
+        <a class="box">
             <img src="../images/homegrid1.jpg" alt="Example Project">
-        </div>
-        <div class="box2">
+        </a>
+        <a class="box">
             <img src="../images/homegrid2.jpg" alt="Example Project">
-        </div>
-        <div class="box2">
+        </a>
+        <a class="box">
             <img src="../images/homegrid1.jpg" alt="Example Project">
-        </div>
-        <div class="box3">
+        </a>
+        <a class="box">
             <img src="../images/homegrid2.jpg" alt="Example Project">
-        </div>
+        </a>
+        <a class="box">
+            <img src="../images/homegrid2.jpg" alt="Example Project">
+        </a>
+        <a class="box">
+            <img src="../images/homegrid1.jpg" alt="Example Project">
+        </a>
     </article>
 
     <!-- Left Navbar -->
@@ -98,5 +104,19 @@
         </div>
     </nav>
 </div>
+
+<script type="text/javascript">
+    const bigLogo = document.querySelector("#bigLogo");
+    const homeSection = document.querySelector("#home-section");
+    const exampleProjects = document.querySelector("#example-projects");
+    window.addEventListener('wheel', ()=>{
+        bigLogo.classList.add('fadeOut');
+        setTimeout(function(){ homeSection.remove() }, 300)
+        setTimeout(function(){
+            exampleProjects.style.display = 'grid';
+            exampleProjects.classList.add('fadeIn');
+        }, 310)
+    });
+</script>
 
 <% include ./partials/footer %>
