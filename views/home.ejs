@@ -1,43 +1,85 @@
-<% include ./partials/header %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Square and Circle</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<body>
+
+    <!-- Top Navbar -->
+    <nav id="topnav">
+        <div id="logo">
+            <a href="/"><img src="../../images/final_logo_greyscale.png" alt="Square & Circle Graphic Design Logo"></a>
+        </div>
+        <!-- Responsive toggleable three line menu -->
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="hamburger-menu">
+            <div class="menu-lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </label>
+
+        <div id="links">
+            <a class="moveFromTop1" id="graphic-design" href="../../graphic-design">Graphic Design</a>
+            <a class="moveFromTop2" id="photography" href="../../photography">Photography</a>
+            <a class="moveFromTop3" id="art" href="../../art">Art</a>
+            <a class="leftlinks-responsive" href="../../about">Contact</a>
+            <a class="leftlinks-responsive" href="../../concept">Concept</a>
+        </div>
+
+    </nav>
+
 
 <div class="layout">
+    <!-- Page Content  -->
+    <section id="home-section">
+        <div class="pulse">
+            <img id="bigLogo" src="../images/final_logo.png" alt="Square & Circle Graphic Design Logo Image">
+        </div>
+    </section>
+    
+    <article id="example-projects">
+        <div class="box1">
+            <img src="../images/homegrid1.jpg" alt="Example Project">
+        </div>
+        <div class="box2">
+            <img src="../images/homegrid2.jpg" alt="Example Project">
+        </div>
+        <div class="box2">
+            <img src="../images/homegrid1.jpg" alt="Example Project">
+        </div>
+        <div class="box3">
+            <img src="../images/homegrid2.jpg" alt="Example Project">
+        </div>
+    </article>
+
     <!-- Left Navbar -->
     <nav id="leftnav">
         <div id="leftlinks">
-            <a href="about">About</a>
-            <a href="concept">Concept</a>
+            <a class="moveFromLeft1" href="about">About</a>
+            <a class="moveFromLeft2" href="concept">Concept</a>
         </div>
     </nav>
 
-    <!-- Page Content  -->
-    <section id="split-screen">
-        <article id="home-section">
-            <div>
-                <img id="bigLogo" src="../images/final_logo.png" alt="Square & Circle Graphic Design Logo Image">
-            </div>
-        </article>
-    
-        <article id="example-projects">
-            <div class="box1">
-                <img src="../images/homegrid1.jpg" alt="Example Project">
-            </div>
-            <div class="box2">
-                <img src="../images/homegrid2.jpg" alt="Example Project">
-            </div>
-            <div class="box2">
-                <img src="../images/homegrid1.jpg" alt="Example Project">
-            </div>
-            <div class="box3">
-                <img src="../images/homegrid2.jpg" alt="Example Project">
-            </div>
-        </article>
-    </section>
+    <!-- RIGHT NAV -->
+    <nav id="socialnav">
+        <div id="sociallinks">
+            <a class="moveFromRight1" href="https://www.behance.net/Gabriele_Ving">behance</a>
+            <a class="moveFromRight2" href="https://www.instagram.com/square_and_circle_ideas/">instagram</a>
+        </div>
+    </nav>
 
-    <% include ./partials/socialnav %>
-
-    <!-- Bottom Navbar Homepage Only-->
+    <!-- Bottom Navbar Mobile Homepage Only-->
     <nav id="bottomnavHomeResponsive">
-        <div id="bottomlink">
+        <div class="moveFromBottom" id="bottomlink">
             <a href="about">
                 <span id="landingname">Gabrielė Vingraitė </span> – 
             </a>
@@ -47,12 +89,12 @@
         </div>
     </nav>
 
-    <!-- Right Navbar Homepage Only-->
+    <!-- Right Navbar Mobile Homepage Only-->
 
     <nav id="socialnavHomeResponsive">
         <div id="sociallinks">
-            <a href="https://www.behance.net/Gabriele_Ving">behance</a>
-            <a href="https://www.instagram.com/square_and_circle_ideas/">instagram</a>
+            <a class="moveFromRight1" href="https://www.behance.net/Gabriele_Ving">behance</a>
+            <a class="moveFromRight2" href="https://www.instagram.com/square_and_circle_ideas/">instagram</a>
         </div>
     </nav>
 </div>

@@ -287,11 +287,6 @@ body {
 }
 
 /* HOMEPAGE */
-#split-screen {
-	display: flex;
-	margin: 0 auto;
-}
-
 #home-section {
 	display: flex;
 	justify-content: center;
@@ -319,43 +314,7 @@ body {
 }
 
 #example-projects {
-	display: inline-grid;
-	/* position: absolute; */
-	top: 2vh;
-	right: 6vw;
-	z-index: 601;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-column-gap: 2rem;
-	grid-row-gap: 1rem;
-	grid-auto-flow: column;
-}
-
-.box1 {
-	position: relative;
-	top: 0rem;
-	left: -1rem;
-	height: 7rem;
-	width: 9rem;
-}
-.box2 {
-	position: relative;
-	top: -2rem;
-	height: 7rem;
-	width: 9rem;
-	background-color: orangered;
-}
-.box3 {
-	position: relative;
-	top: -3rem;
-	left: 1rem;
-	height: 7rem;
-	width: 9rem;
-	background-color: cyan;
-}
-
-#example-projects img {
-	max-width: 100%;
+	display: none;
 }
 
 /* Bottom Navbar - email/contact info */
@@ -952,7 +911,7 @@ button:focus {
 /* ANIMATIONS */
 .fadeAnimation {
 	opacity: 1;
-	animation: fadeInLoad 800ms ease-in-out;
+	animation: fadeInLoad 900ms ease-in-out;
 }
 
 @keyframes fadeInLoad {
@@ -961,5 +920,115 @@ button:focus {
 	}
 	to {
 		opacity: 1;
+	}
+}
+
+.moveFromTop1 {
+	opacity: 0;
+	animation: moveFromTop 170ms ease-in-out 10ms forwards;
+	-webkit-animation: moveFromTop 170ms ease-in-out 10ms forwards;
+}
+.moveFromTop2 {
+	opacity: 0;
+	animation: moveFromTop 170ms ease-in-out 75ms forwards;
+	-webkit-animation: moveFromTop 170ms ease-in-out 75ms forwards;
+}
+.moveFromTop3 {
+	opacity: 0;
+	animation: moveFromTop 170ms ease-in-out 140ms forwards;
+	-webkit-animation: moveFromTop 170ms ease-in-out 140ms forwards;
+}
+
+@keyframes moveFromTop {
+	from {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.moveFromLeft1 {
+	opacity: 0;
+	animation: moveFromLeft 170ms ease-in-out 300ms forwards;
+	-webkit-animation: moveFromLeft 170ms ease-in-out 300ms forwards;
+}
+.moveFromLeft2 {
+	opacity: 0;
+	animation: moveFromLeft 170ms ease-in-out 350ms forwards;
+	-webkit-animation: moveFromLeft 170ms ease-in-out 350ms forwards;
+}
+
+@keyframes moveFromLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-50px) scale(-1, -1);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px) scale(-1, -1);
+	}
+}
+
+.moveFromRight1 {
+	opacity: 0;
+	animation: moveFromRight 170ms ease-in-out 400ms forwards;
+	-webkit-animation: moveFromRight 170ms ease-in-out 400ms forwards;
+}
+.moveFromRight2 {
+	opacity: 0;
+	animation: moveFromRight 170ms ease-in-out 450ms forwards;
+	-webkit-animation: moveFromRight 170ms ease-in-out 450ms forwards;
+}
+@media (max-width: 560px) {
+	#sociallinks {
+		transform: scale(-1, -1);
+	}
+}
+
+@keyframes moveFromRight {
+	from {
+		opacity: 0;
+		transform: translateX(50px) scale(-1, -1);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px) scale(-1, -1);
+	}
+}
+
+.moveFromBottom {
+	opacity: 0;
+	animation: moveFromBottom 170ms ease-in-out 500ms forwards;
+	-webkit-animation: moveFromBottom 170ms ease-in-out 500ms forwards;
+}
+
+@keyframes moveFromBottom {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.pulse {
+	animation: pulse 3000ms ease-in-out 200ms alternate 1;
+	-webkit-animation: pulse 3000ms ease-in-out 200ms alternate 1;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1, 1);
+	}
+	50% {
+		transform: scale(0.95, 0.95);
+	}
+	100% {
+		transform: scale(1, 1);
 	}
 }
