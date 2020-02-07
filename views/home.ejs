@@ -47,10 +47,13 @@
     </section>
     
     <article id="example-projects">
-        <a class="box">
-            <img src="../images/homegrid1.jpg" alt="Example Project">
-        </a>
-        <a class="box">
+        <% projects.forEach(function(project){ %>
+            <a class="box" href="/project/<%= project._id %>">
+                <img src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, {quality: 40, crop: `fit`}) %>" alt="<%= project.title %> image">
+            </a>
+        <% }); %>
+
+        <!-- <a class="box">
             <img src="../images/homegrid2.jpg" alt="Example Project">
         </a>
         <a class="box">
@@ -64,7 +67,7 @@
         </a>
         <a class="box">
             <img src="../images/homegrid1.jpg" alt="Example Project">
-        </a>
+        </a> -->
     </article>
 
     <!-- Left Navbar -->
@@ -115,7 +118,7 @@
         setTimeout(function(){
             exampleProjects.style.display = 'grid';
             exampleProjects.classList.add('fadeIn');
-        }, 310)
+        }, 300)
     });
 </script>
 

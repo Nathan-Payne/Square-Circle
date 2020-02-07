@@ -63,7 +63,7 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// add random projects to homepage in random places
+// add remaining projects to photo and art pages
 // optimise images to use lazy load/pagination and html picture tags with various image sizes and qualities
 // blank image placeholder before image load / ultra low res version load with priority
 // internal links for pink text on about page
