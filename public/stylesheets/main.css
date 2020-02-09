@@ -335,11 +335,6 @@ body {
 	}
 }
 
-#example-projects a img:hover {
-	opacity: 0.8;
-	transition: opacity .1s ease-in-out;
-}
-
 .box {
 	overflow: hidden;
 }
@@ -348,6 +343,11 @@ body {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+#example-projects .box img:hover {
+	opacity: 0.8;
+	transition: opacity .1s ease-in-out;
 }
 
 /* Bottom Navbar - email/contact info */

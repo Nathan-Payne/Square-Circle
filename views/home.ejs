@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
     <title>Square and Circle</title>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/stylesheets/main.css">
@@ -52,8 +51,11 @@
                 <% if(projects[i]){ %>
                     <% let project = projects[i] %>
                     <a class="box" href="/project/<%= project._id %>">
-                        <img    sizes= '5em' 
-                                src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 60, width: 'auto', client_hints: 'true', crop: 'scale', fetch_format: 'auto' }) %>"
+                        <img    sizes= '(max-width: 560px) 480px, (max-width: 767px) 720px, (max-width: 980px) 1080px' 
+                                srcset="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '480', crop: 'scale', fetch_format: 'auto' }) %> 480w, 
+                                <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '720', crop: 'scale', fetch_format: 'auto' }) %> 720w, 
+                                <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '1080', crop: 'scale', fetch_format: 'auto' }) %> 1080w "
+                                src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: 'auto', crop: 'scale', fetch_format: 'auto' }) %>"
                                 alt="<%= project.title %> image"
                         >
                     </a>

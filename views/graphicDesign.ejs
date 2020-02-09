@@ -29,12 +29,20 @@
         <% projects.forEach(function(project, index){ %>
             <article class="thumbnail fadeAnimation">
                 <a href="/project/<%= project._id %>">
-                    <img src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, {quality: 28, crop: `fit`}) %>" alt="<%= project.title %> image">
+                    <img    sizes='(max-width: 560px) 480px, (max-width: 767px) 720px, (max-width: 980px) 1080px'
+                            srcset="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '480', crop: 'fit', fetch_format: 'auto' }) %> 480w, 
+                                    <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '720', crop: 'fit', fetch_format: 'auto' }) %> 720w, 
+                                    <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '1080', crop: 'fit', fetch_format: 'auto' }) %> 1080w "
+                            src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: 'auto', crop: 'fit', fetch_format: 'auto' }) %>"
+                            alt="<%= project.title %> image"
+                    >
                     <h4><span><%= project.title %></span></h4> 
                     <h6><%= project.shortDesc %></h6>
                 </a>
                 <% if(currentUser){ %>
-                    <h6>Current position: <%= project.xPosition %>, <%= project.yPosition %></h6>
+                    <h6>Position: </h6>
+                    <h6>GridX, GridY: <%= project.xPosition %>, <%= project.yPosition %></h6>
+                    <h6>FineX, FineY: <%= project.xFine %>, <%= project.yFine %></h6>
                     <a href="/project/<%= project._id %>/edit">
                         <button>EDIT PROJECT</button>
                     </a>
