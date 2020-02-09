@@ -335,6 +335,11 @@ body {
 	}
 }
 
+#example-projects a img:hover {
+	opacity: 0.8;
+	transition: opacity .1s ease-in-out;
+}
+
 .box {
 	overflow: hidden;
 }
@@ -1062,7 +1067,7 @@ button:focus {
 }
 
 .fadeOut {
-	animation: fadeOut 200ms ease-out forwards;
+	animation: fadeOut 150ms ease-out forwards;
 }
 
 @keyframes fadeOut {
@@ -1075,5 +1080,5 @@ button:focus {
 }
 
 .fadeIn {
-	animation: fadeInLoad 200ms ease-in forwards;
+	animation: fadeInLoad 150ms ease-in forwards;
 }
