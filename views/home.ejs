@@ -51,10 +51,12 @@
                 <% if(projects[i]){ %>
                     <% let project = projects[i] %>
                     <a class="box" href="/project/<%= project._id %>">
-                        <img    sizes= '(max-width: 560px) 480px, (max-width: 767px) 720px, (max-width: 980px) 1080px' 
-                                srcset="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '480', crop: 'scale', fetch_format: 'auto' }) %> 480w, 
+                        <img    sizes= "(max-width: 560px) 480px, (max-width: 767px) 720px, (max-width: 980px) 1080px" 
+                                srcset="
+                                <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '480', crop: 'scale', fetch_format: 'auto' }) %> 480w, 
                                 <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '720', crop: 'scale', fetch_format: 'auto' }) %> 720w, 
-                                <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '1080', crop: 'scale', fetch_format: 'auto' }) %> 1080w "
+                                <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '1080', crop: 'scale', fetch_format: 'auto' }) %> 1080w 
+                                "
                                 src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: 'auto', crop: 'scale', fetch_format: 'auto' }) %>"
                                 alt="<%= project.title %> image"
                         >
@@ -105,14 +107,16 @@
         const bigLogo = document.querySelector("#bigLogo");
         const homeSection = document.querySelector("#home-section");
         const exampleProjects = document.querySelector("#example-projects");
-        window.addEventListener('wheel', ()=>{
+        function homeFadeGrid() {
             bigLogo.classList.add('fadeOut');
-            setTimeout(function(){ homeSection.remove() }, 200)
-            setTimeout(function(){
-                exampleProjects.style.display = 'grid';
+            setTimeout(function () { homeSection.remove() }, 200)
+            setTimeout(function () {
                 exampleProjects.classList.add('fadeIn');
-            }, 200)
-        });
+                exampleProjects.style.display = 'grid';
+            }, 200);
+        };
+        window.addEventListener('wheel', homeFadeGrid)
+        window.addEventListener('click', homeFadeGrid)
     </script>
 
 <% include ./partials/footer %>

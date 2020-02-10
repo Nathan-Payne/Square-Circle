@@ -11,7 +11,16 @@
         <!-- removes first element from imgUrl's on project page to prevent image duplication with cover pic -->
         <% project.imgUrl.shift() %>
         <% project.imgUrl.forEach((img, index)=>{ %>
-            <img src="<%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {height: 0.8, crop:`fit`, quality: 60}) %>" alt="Image of the <%= project.title %> project">
+            <img sizes= '(max-width: 560px) 480px, (max-width: 767px) 720px, (max-width: 980px) 1080px'
+                 srcset="
+                <%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: '720', crop: `fit`, quality: 65, fetch_format: 'auto' })%> 480w,
+                <%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: '960', crop: `fit`, quality: 65, fetch_format: 'auto' })%> 720w,
+                <%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: '1200', crop: `fit`, quality: 65, fetch_format: 'auto' })%> 1080w
+                "
+                 src="<%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: 'auto', crop: `fit`, quality: 65, fetch_format: 'auto' }) %>"
+                 alt="Image of the <%= project.title %> project"
+                 class="fadeIn"
+                 >
         <% }) %>
         <header id="projectTitleSpace">
             <h1><%= project.title %></h1>
