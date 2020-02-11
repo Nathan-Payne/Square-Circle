@@ -63,7 +63,7 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// add remaining projects to photo and art pages
+// add remaining projects to photo and art pages - requires Lithuanian title to be added to project model
 // circle of projects instead of grid on home.ejs?
 // optimise images to use lazy load/pagination and html picture tags with various image sizes and qualities
 // internal links for pink text on about page

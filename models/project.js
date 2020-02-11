@@ -2,6 +2,12 @@ const mongoose = require('mongoose');
 
 var projectSchema = new mongoose.Schema({
 	title: String,
+	titleLith: {
+		type: String,
+		default: function() {
+			return this.title;
+		}
+	},
 	projectType: { type: String, enum: [ 'Graphic Design', 'Photography', 'Art' ] },
 	shortDesc: String,
 	englishDesc: String,

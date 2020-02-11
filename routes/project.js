@@ -201,6 +201,7 @@ router.put('/project/:id', middleware.isLoggedIn, upload.array('image', 30), (re
 				}
 			}
 			project.title = req.body.project.title;
+			project.titleLith = req.body.project.titleLith;
 			project.projectType = req.body.project.projectType;
 			project.shortDesc = req.body.project.shortDesc;
 			project.englishDesc = req.body.project.englishDesc;
