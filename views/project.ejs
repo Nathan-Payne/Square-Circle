@@ -17,9 +17,9 @@
                 <%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: '960', crop: `fit`, quality: 65, fetch_format: 'auto' })%> 720w,
                 <%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: '1200', crop: `fit`, quality: 65, fetch_format: 'auto' })%> 1080w
                 "
-                 src="<%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: 'auto', crop: `fit`, quality: 65, fetch_format: 'auto' }) %>"
+    ll            src="<%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: 'auto', crop: `fit`, quality: 65, fetch_format: 'auto' }) %>"
                  alt="Image of the <%= project.title %> project"
-                 class="fadeIn"
+    ll            class="fadeIn"
                  >
         <% }) %>
         <header id="projectTitleSpace">
