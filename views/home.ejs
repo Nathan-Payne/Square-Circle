@@ -14,7 +14,7 @@
 
     <!-- Top Navbar -->
     <nav id="topnav">
-        <div id="logo">
+        <div id="logo" class="pulse">
             <a href="/"><img src="../../images/final_logo_greyscale.png" alt="Square & Circle Graphic Design Logo"></a>
         </div>
         <!-- Responsive toggleable three line menu -->
@@ -40,12 +40,7 @@
 
     <div class="layout">
         <!-- Page Content  -->
-        <section id="home-section">
-            <div class="pulse">
-                <img id="bigLogo" src="../images/final_logo.png" alt="Square & Circle Graphic Design Logo Image">
-            </div>
-        </section>
-        
+
         <article id="example-projects">
             <% for(let i=0; i < 6; i++){ %>
                 <% if(projects[i]){ %>
@@ -74,7 +69,7 @@
         </nav>
 
         <!-- RIGHT NAV -->
-        <nav id="socialnav">
+        <nav id="socialnavHome">
             <div id="sociallinks">
                 <a class="moveFromRight1" href="https://www.behance.net/Gabriele_Ving">behance</a>
                 <a class="moveFromRight2" href="https://www.instagram.com/square_and_circle_ideas/">instagram</a>
@@ -104,19 +99,14 @@
     </div>
 
     <script type="text/javascript">
-        const bigLogo = document.querySelector("#bigLogo");
-        const homeSection = document.querySelector("#home-section");
         const exampleProjects = document.querySelector("#example-projects");
         function homeFadeGrid() {
-            bigLogo.classList.add('fadeOut');
-            setTimeout(function () { homeSection.remove() }, 200)
             setTimeout(function () {
                 exampleProjects.classList.add('fadeIn');
                 exampleProjects.style.display = 'grid';
-            }, 200);
+            }, 480);
         };
-        window.addEventListener('wheel', homeFadeGrid)
-        window.addEventListener('click', homeFadeGrid)
+        homeFadeGrid();
     </script>
 
 <% include ./partials/footer %>
