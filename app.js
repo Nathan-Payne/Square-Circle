@@ -63,10 +63,17 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
+// move email back to bottom and add hover on highlight
+// increase gap between project images - increase margin at sides of images
+// add contacts/about to project pages where not appearing
+// check concept and about white space around titles
+// education section - smaller gap between dates and color text
+// revert changes to images - make shortest sides the same size / proportion
+// random placing of randomised projects on home - similar style to art/grpahic-design - will need to lazy load
 // add remaining projects to photo and art pages
-// circle of projects instead of grid on home.ejs?
 // internal links for pink text on about page
 // ensure responsive for 2k/4k (font size, image sizing/quality)
+// check meta info
 
 // AFTER LIVE SITE UP
 // HOST ON VPS - dwn squarecircleUser (DONE)
@@ -75,5 +82,5 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE
 
 // Possible future updates
 // blank image placeholder before image load / ultra low res version load with priority
-// optimise images to use lazy load/pagination
+// optimise images to use lazy load (or pagination if requested)
 // add language tab to about / concept pages - require translation

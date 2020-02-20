@@ -12,26 +12,25 @@
         <% project.imgUrl.shift() %>
         <% project.imgUrl.forEach((img, index)=>{ %>
             <img sizes= '(max-width: 560px) 480px, (max-width: 767px) 720px, (max-width: 980px) 1080px'
-                 srcset="
+                srcset="
                 <%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: '720', crop: `fit`, quality: 65, fetch_format: 'auto' })%> 480w,
                 <%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: '960', crop: `fit`, quality: 65, fetch_format: 'auto' })%> 720w,
                 <%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: '1200', crop: `fit`, quality: 65, fetch_format: 'auto' })%> 1080w
                 "
-    ll            src="<%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: 'auto', crop: `fit`, quality: 65, fetch_format: 'auto' }) %>"
-                 alt="Image of the <%= project.title %> project"
-    ll            class="fadeIn"
-                 >
+                src="<%= cloudinary.url(`square_circle/${project.title}_image${index+1}.jpg`, {width: 'auto', crop: `fit`, quality: 65, fetch_format: 'auto' }) %>"
+                alt="Image of the <%= project.title %> project"
+                class="fadeIn"
+                >
         <% }) %>
         <header id="projectTitleSpace">
             <h1 class="activeTab" id="titleEng"><%= project.title %></h1>
             <h1 id="titleLith"><%= project.titleLith %></h1>
-            <button class="changeLang">EN / LT</button>
         </header>
         <div class="tabContent">
             <p class="activeTab descText fadeAnimation" id="engDesc"><%= project.englishDesc %></p>
             <p class="descText fadeAnimation" id="lithDesc"><%= project.lithuanianDesc %></p>
         </div>
-        <div id="greybar"></div>
+        <button class="changeLang">EN / LT</button>
     </article>
 </section>
 
