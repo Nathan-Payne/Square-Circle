@@ -659,17 +659,24 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: start;
-	width: 65vw;
+	width: 60vw;
+	margin-left: 2rem;
 }
 @media (max-width: 767px) {
 	.projectpage article {
 		width: 85vw;
+		margin-left: 2.3rem;
+	}
+}
+@media (max-width: 560px) {
+	.projectpage article {
+		margin-left: 0rem;
 	}
 }
 
 .projectpage article img {
 	width: 100%;
-	margin-bottom: 0.5rem;
+	margin-bottom: 1.6rem;
 	align-self: center;
 }
 @media (max-width: 767px) {

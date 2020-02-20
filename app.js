@@ -64,8 +64,6 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE
 
 // MEETING NOTES
 // move email back to bottom and add hover on highlight
-// increase gap between project images - increase margin at sides of images
-// add contacts/about to project pages where not appearing
 // check concept and about white space around titles
 // education section - smaller gap between dates and color text
 // revert changes to images - make shortest sides the same size / proportion
