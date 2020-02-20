@@ -64,8 +64,6 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE
 
 // MEETING NOTES
 // move email back to bottom and add hover on highlight
-// check concept and about white space around titles
-// education section - smaller gap between dates and color text
 // revert changes to images - make shortest sides the same size / proportion
 // random placing of randomised projects on home - similar style to art/grpahic-design - will need to lazy load
 // add remaining projects to photo and art pages
