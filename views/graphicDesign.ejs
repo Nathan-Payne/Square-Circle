@@ -52,6 +52,16 @@
     </section>
 </div>
 
+<script type="text/javascript">
+    let thumbnailImgs = document.querySelectorAll('.thumbnail > a > img');
+    thumbnailImgs.forEach((img) => {
+        img.addEventListener('load', () => {
+            if (img.naturalWidth > img.naturalHeight) {
+                img.classList.add('img-landscape');
+            }
+        });
+    });
+</script>
 <!-- required for .ejs variable (projects) to be passed to .js script file (disable-grid.js) -->
 <script type="text/javascript">
     let thumbProjects = <%-JSON.stringify(projects, ['_id', 'title', 'shortDesc', 'xPosition', 'yPosition', 'xFine', 'yFine'])%>;

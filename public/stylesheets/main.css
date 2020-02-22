@@ -546,7 +546,7 @@ body {
 	grid-column-end: span 3;
 	grid-row-end: span 3;
 	text-align: start;
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	margin-bottom: 2.6rem;
 }
 @media (max-width: 767px) {
@@ -563,11 +563,14 @@ body {
 }
 
 .thumbnail img {
-	max-height: auto;
-	max-width: 90%;
+	width: 90%;
 	object-fit: cover;
 	opacity: 1;
 	transition: opacity .1s ease-in-out;
+}
+
+.thumbnail .img-landscape {
+	width: 160%;
 }
 
 @media (max-width: 767px) {

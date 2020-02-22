@@ -63,7 +63,7 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
-// revert changes to images - make shortest sides the same size / proportion
+// make shortest sides the same size / proportion - requires JS
 // random placing of randomised projects on home - similar style to art/grpahic-design - will need to lazy load
 // add remaining projects to photo and art pages
 // internal links for pink text on about page
