@@ -570,7 +570,7 @@ body {
 }
 
 .thumbnail .img-landscape {
-	width: 160%;
+	width: 127%;
 }
 
 @media (max-width: 767px) {
