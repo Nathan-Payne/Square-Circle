@@ -53,6 +53,7 @@
 </div>
 
 <script type="text/javascript">
+    // select all imgs on page, when content loaded add landscape class if width > height
     let thumbnailImgs = document.querySelectorAll('.thumbnail > a > img');
     thumbnailImgs.forEach((img) => {
         img.addEventListener('load', () => {

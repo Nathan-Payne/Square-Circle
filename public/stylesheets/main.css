@@ -29,7 +29,7 @@ body {
 	position: sticky;
 	top: 0;
 	background-color: white;
-	z-index: 600;
+	z-index: 60;
 	min-height: 80px;
 	grid-template-columns: 1.5fr 6.5fr 4fr;
 	grid-template-rows: auto;
@@ -296,39 +296,151 @@ body {
 
 #example-projects {
 	display: none;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-gap: 4px;
-	width: 44vw;
-	height: 54vh;
-	position: relative;
-	left: 29vw;
-	top: 9vh;
 	opacity: 0;
+}
+
+.homeProject {
+	width: 13vw;
+	text-align: start;
+	position: fixed;
+}
+
+.homeProject a img {
+	width: 100%;
+	object-fit: cover;
 }
 
 @media (max-width: 560px) {
 	#example-projects {
-		top: 3vh;
-		left: 20vw;
-		height: 35vh;
-		width: 60vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		height: 60vh;
+	}
+	.homeProject {
+		width: 35vw;
+		position: static;
+	}
+	.homeProject a img {
+		width: 76%;
 	}
 }
 
-.box {
-	overflow: hidden;
+/* Individual project id's for homepage - use to fix position */
+
+#hp-0 {
+	top: 17vh;
+	left: 27vw;
+}
+#hp-1 {
+	top: 20vh;
+	left: 72vw;
+}
+#hp-2 {
+	top: 44vh;
+	left: 48vw;
+}
+#hp-3 {
+	top: 50vh;
+	left: 9vw;
+}
+@media (max-width: 767px) {
+	#hp-0 {
+		top: 27vh;
+		left: 20vw;
+	}
+	#hp-3 {
+		top: 68vh;
+		left: 12vw;
+	}
+}
+@media (max-width: 560px) {
+	#hp-0 {
+		align-self: flex-start;
+		margin-top: 2rem;
+		margin-left: 2rem;
+	}
+	#hp-1 {
+		align-self: flex-end;
+	}
+	#hp-2 {
+		align-self: center;
+	}
+	#hp-3 {
+		display: none;
+	}
 }
 
-.box img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.homeProject h4,
+.homeProject h6,
+.homeProject p {
+	margin: 0;
+	padding: 0;
+}
+@media (max-width: 767px) {
+	.homeProject h4,
+	.homeProject h6,
+	.homeProject p {
+		text-align: start;
+	}
+}
+/* Random projects on homepage title and underline */
+.homeProject h4 {
+	text-transform: uppercase;
+	font-weight: 900;
+	text-decoration: none;
+	padding-bottom: 0.2rem;
+}
+.homeProject h4 span {
+	position: relative;
+	padding-bottom: 1px;
+	background-image: linear-gradient(
+		to bottom,
+		black 33%,
+		rgba(0, 0, 0, 0) 33%,
+		rgba(0, 0, 0, 0) 66%,
+		black 66%,
+		black
+	);
+	background-position: 0 1.03em;
+	background-repeat: repeat-x;
+	background-size: 6px 8px;
+	-webkit-background-size: 6px 8px;
 }
 
-#example-projects .box img:hover {
-	opacity: 0.8;
-	transition: opacity .1s ease-in-out;
+.homeProject:hover h4 span {
+	color: #e66558;
+	transition: color .1s;
+	background-image: linear-gradient(
+		to bottom,
+		#e66558 33%,
+		rgba(255, 255, 255, 0) 33%,
+		rgba(255, 255, 255, 0) 66%,
+		#e66558 66%,
+		#e66558
+	);
+	background-size: 6px 8px;
+}
+
+.homeProject:active a h4 {
+	color: #e66558;
+}
+.homeProject:active span {
+	background-image: linear-gradient(
+		to bottom,
+		#e66558 33%,
+		rgba(255, 255, 255, 0) 33%,
+		rgba(255, 255, 255, 0) 66%,
+		#e66558 66%,
+		#e66558
+	);
+}
+
+.homeProject h6 {
+	color: black;
+	font-weight: 400;
+	font-size: 0.9rem;
 }
 
 /* Bottom Navbar - email/contact info */

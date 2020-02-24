@@ -41,24 +41,28 @@
     <div class="layout">
         <!-- Page Content  -->
 
-        <article id="example-projects">
-            <% for(let i=0; i < 6; i++){ %>
+        <section id="example-projects">
+            <% for(let i=0; i < 4; i++){ %>
                 <% if(projects[i]){ %>
                     <% let project = projects[i] %>
-                    <a class="box" href="/project/<%= project._id %>">
-                        <img    sizes= "(max-width: 560px) 480px, (max-width: 767px) 720px, (max-width: 980px) 1080px" 
-                                srcset="
-                                <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '480', crop: 'scale', fetch_format: 'auto' }) %> 480w, 
-                                <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '720', crop: 'scale', fetch_format: 'auto' }) %> 720w, 
-                                <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '1080', crop: 'scale', fetch_format: 'auto' }) %> 1080w 
-                                "
-                                src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: 'auto', crop: 'scale', fetch_format: 'auto' }) %>"
-                                alt="<%= project.title %> image"
-                        >
-                    </a>
+                    <article class="homeProject" id="hp-<%=i%>">
+                        <a href="/project/<%= project._id %>">
+                            <img    sizes= "(max-width: 560px) 480px, (max-width: 767px) 720px, (max-width: 980px) 1080px" 
+                                    srcset="
+                                    <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '480', crop: 'scale', fetch_format: 'auto' }) %> 480w, 
+                                    <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '720', crop: 'scale', fetch_format: 'auto' }) %> 720w, 
+                                    <%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: '1080', crop: 'scale', fetch_format: 'auto' }) %> 1080w 
+                                    "
+                                    src="<%= cloudinary.url(`square_circle/${project.title}_image0.jpg`, { quality: 65, width: 'auto', crop: 'scale', fetch_format: 'auto' }) %>"
+                                    alt="<%= project.title %> image"
+                            >
+                        </a>
+                        <h4><span><%= project.title %></span></h4>
+                        <h6><span>hp-<%=i%></span></h6>
+                    </article>
                 <% } else {i=7} %>
             <% }; %>
-        </article>
+        </section>
 
         <!-- Left Navbar -->
         <nav id="leftnav">
@@ -103,10 +107,22 @@
         function homeFadeGrid() {
             setTimeout(function () {
                 exampleProjects.classList.add('fadeIn');
-                exampleProjects.style.display = 'grid';
+                exampleProjects.style.display = 'flex';
             }, 480);
         };
         homeFadeGrid();
+    </script>
+
+    <script type="text/javascript">
+        // select all imgs on page, when content loaded add landscape class if width > height
+        let homeProjectImgs = document.querySelectorAll('.homeProject > a > img');
+        homeProjectImgs.forEach((img) => {
+            img.addEventListener('load', () => {
+                if (img.naturalWidth > img.naturalHeight) {
+                    img.classList.add('img-landscape');
+                }
+            });
+        });
     </script>
 
 <% include ./partials/footer %>

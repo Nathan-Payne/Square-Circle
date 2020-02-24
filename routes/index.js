@@ -15,7 +15,12 @@ cloudinary.config({
 //HOMEPAGE
 router.get('/', async (req, res) => {
 	try {
-		let projects = await Project.find({ projectType: 'Graphic Design' });
+		let randomInt = (n) => Math.floor(Math.random() * n);
+		let projects = [];
+		let allProjects = await Project.find();
+		for (let p = 0; p < 4; p++) {
+			projects.push(allProjects[randomInt(allProjects.length)]);
+		}
 		res.render('home', { projects: projects, cloudinary: cloudinary });
 	} catch (err) {
 		console.error(err);
