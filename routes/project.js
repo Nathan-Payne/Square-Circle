@@ -53,7 +53,7 @@ router.post('/create', middleware.isLoggedIn, upload.array('image', 30), async (
 							console.log(`Project create error: ${err}`);
 							return res.redirect('back');
 						}
-						return res.redirect(`/project/${newProject._id}`);
+						return res.redirect(`/graphic-design`);
 					});
 				}
 			}
