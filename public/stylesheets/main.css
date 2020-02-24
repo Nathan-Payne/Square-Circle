@@ -9,6 +9,7 @@ body {
 	font-size: 1rem;
 	letter-spacing: 0.01rem;
 	margin-bottom: 0px;
+	margin-top: 0px;
 }
 
 .layout {
@@ -28,6 +29,7 @@ body {
 	display: grid;
 	position: sticky;
 	top: 0;
+	padding-top: 7px;
 	background-color: white;
 	z-index: 60;
 	min-height: 80px;
@@ -331,19 +333,19 @@ body {
 
 #hp-0 {
 	top: 17vh;
-	left: 27vw;
+	left: 31vw;
 }
 #hp-1 {
 	top: 20vh;
-	left: 72vw;
+	left: 77vw;
 }
 #hp-2 {
 	top: 44vh;
-	left: 48vw;
+	left: 52vw;
 }
 #hp-3 {
 	top: 50vh;
-	left: 9vw;
+	left: 10vw;
 }
 @media (max-width: 767px) {
 	#hp-0 {
@@ -389,9 +391,16 @@ body {
 .homeProject h4 {
 	text-transform: uppercase;
 	font-weight: 900;
+	font-size: 0.88rem;
 	text-decoration: none;
 	padding-bottom: 0.2rem;
 }
+@media (max-width: 560px) {
+	.homeProject h4 {
+		font-size: 0.8rem;
+	}
+}
+
 .homeProject h4 span {
 	position: relative;
 	padding-bottom: 1px;
@@ -540,7 +549,7 @@ body {
 	display: inline-block;
 	position: fixed;
 	right: 2vw;
-	bottom: 17vh;
+	bottom: 8vh;
 }
 @media (max-width: 767px) {
 	#socialnav {
@@ -728,10 +737,7 @@ body {
 	background-size: 6px 8px;
 	-webkit-background-size: 6px 8px;
 }
-.thumbnail:hover img {
-	opacity: 0.8;
-	transition: opacity .1s ease-in-out;
-}
+
 .thumbnail:hover h4 span {
 	color: #e66558;
 	transition: color .1s;
