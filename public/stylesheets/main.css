@@ -709,6 +709,7 @@ body {
 .thumbnail p {
 	margin: 0;
 	padding: 0;
+	width: 65%;
 }
 @media (max-width: 767px) {
 	.thumbnail h4,
