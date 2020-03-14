@@ -687,7 +687,7 @@ body {
 }
 
 .thumbnail img {
-	width: 90%;
+	width: 65%;
 	object-fit: cover;
 	opacity: 1;
 	transition: opacity .1s ease-in-out;
