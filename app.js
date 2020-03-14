@@ -63,6 +63,8 @@ app.use(projectRoutes);
 app.listen(PORT, () => console.log(`Listening on ${PORT} \n============== SQUARE THAT CIRCLE ==============`));
 
 // MEETING NOTES
+// front page should be scrollable through all projects - performance hit on site so need to paginate - no design given....
+// adopt sizing of images on front page to graphic diesign and other pages
 // add remaining projects to photo and art pages
 // internal links for pink text on about page
 // ensure responsive for 2k/4k (font size, image sizing/quality)
