@@ -619,7 +619,7 @@ body {
 	}
 }
 
-#sociallinks a .emailHighlight:hover {
+#sociallinks a .navHighlight:hover {
 	color: #e66558;
 	transition: color 200ms;
 }
@@ -694,7 +694,7 @@ body {
 }
 
 .thumbnail .img-landscape {
-	width: 127%;
+	width: 100%;
 }
 
 @media (max-width: 767px) {

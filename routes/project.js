@@ -214,7 +214,11 @@ router.put('/project/:id', middleware.isLoggedIn, upload.array('image', 30), (re
 
 			// console.log("FINAL PROJECT: ", project);
 			project.save();
-			res.redirect('/project/' + req.params.id);
+			if (req.body.project.projectType == 'Graphic Design') {
+				res.redirect(`/graphic-design`);
+			} else {
+				res.redirect(`/${req.body.project.projectType}`);
+			}
 		}
 	});
 });

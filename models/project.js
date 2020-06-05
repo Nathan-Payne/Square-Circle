@@ -21,8 +21,4 @@ var projectSchema = new mongoose.Schema({
 	yFine: { type: Number, default: 0 }
 });
 
-//location: determine position on page via number passed to css variable which gets passed to
-//the grid-column and grid-row properties of new items..
-//grid-auto-columns/rows set size of empty grid elements in between
-
 module.exports = mongoose.model('Project', projectSchema);

@@ -11,12 +11,12 @@
 </head>
 
 <body>
-
     <!-- Top Navbar -->
     <nav id="topnav">
         <div id="logo" class="pulse">
             <a href="/"><img src="../../images/final_logo_greyscale.png" alt="Square & Circle Graphic Design Logo"></a>
         </div>
+        
         <!-- Responsive toggleable three line menu -->
         <input type="checkbox" id="nav-toggle">
         <label for="nav-toggle" class="hamburger-menu">
@@ -37,10 +37,8 @@
 
     </nav>
 
-
     <div class="layout">
-        <!-- Page Content  -->
-
+        <!-- Page Content -->
         <section id="example-projects">
             <% for(let i=0; i < 4; i++){ %>
                 <% if(projects[i]){ %>
@@ -75,9 +73,9 @@
         <!-- RIGHT NAV -->
         <nav id="socialnavHome">
             <div id="sociallinks">
-                <a class="moveFromRight1" href="about">hello@squareandcircle.lt</a>
-                <a class="moveFromRight2" href="https://www.behance.net/Gabriele_Ving">behance</a>
-                <a class="moveFromRight2" href="https://www.instagram.com/square_and_circle_ideas/">instagram</a>
+                <a class="moveFromRight1" href="mailto: hello@squareandcircle.lt"><span class="navHighlight">hello@squareandcircle.lt</span></a>
+                <a class="moveFromRight2" href="https://www.behance.net/Gabriele_Ving"><span class="navHighlight">behance</span></a>
+                <a class="moveFromRight2" href="https://www.instagram.com/square_and_circle_ideas/"><span class="navHighlight">instagram</span></a>
             </div>
         </nav>
 
@@ -94,7 +92,6 @@
         </nav>
 
         <!-- Right Navbar Mobile Homepage Only-->
-
         <nav id="socialnavHomeResponsive">
             <div id="sociallinks">
                 <a class="moveFromRight1" href="about">hello@squareandcircle.lt</a>
@@ -105,6 +102,7 @@
     </div>
 
     <script type="text/javascript">
+        // adds fadeIn class to each project on front page, displays after navs finish fading in themselves
         const exampleProjects = document.querySelector("#example-projects");
         function homeFadeGrid() {
             setTimeout(function () {
