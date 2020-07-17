@@ -18,6 +18,8 @@ Choosing the cloudinary API allowed images to be transformed into the latest web
 
 Admin functionality is provided and allows content management via a form: this includes multi-file upload and CRUD options for position etc.
 
+The project layouts also make use of the newer grid system in CSS. 
+
 ## Timespan
 This project has been worked on on a non-continuous basis. It is currently waiting for a final mobile design specification before being deployed to a domain. 
 
