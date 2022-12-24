@@ -1,7 +1,7 @@
 # Square Circle
-**Client project - currently in progress.**
+**Client project - currently not active.**
 
-This website is being completed for a graphic designer who provided design specifications on the layout, pages and positioning. Another requirement was fine control over future updates without the need for a developer. 
+This website was completed for a graphic designer who provided design specifications on the layout, pages and positioning. The client also required fine control over future content/image positioning updates without the need for a developer. 
 
 ## Technologies
 - HTML (via ejs templating)
@@ -20,11 +20,5 @@ Admin functionality is provided and allows content management via a form: this i
 
 The project layouts also make use of the newer grid system in CSS. 
 
-## Timespan
-This project has been worked on on a non-continuous basis. It is currently waiting for a final mobile design specification before being deployed to a domain. 
-
-## Future changes
-- upload remaining project categories
-- redesign of landing pages (mobile/desktop)
-- update meta info
-- ensure 2k/4k resolution design remains appropriate
+## Demo
+For a look at how the site turned out head to [nathanpayne.dev](https://nathanpayne.dev/)
